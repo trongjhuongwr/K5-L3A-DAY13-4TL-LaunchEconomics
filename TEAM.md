@@ -12,7 +12,7 @@
 | STT | Họ tên | MSSV | Email | GitHub | Vai trò |
 | --: | ------ | ---- | ----- | ------ | ------- |
 |   1 | Nguyễn Trọng Hưởng | 2A202603607 | nguyentronghuong05@gmail.com | trongjhuongwr | Người viết code (Code author) |
-|   2 |        |      |       |        | Người kiểm số (Number verifier) |
+|   2 | Lê Thành Đạt | 2A202603579 | dat.ltforwork@gmail.com / 26ai.datlt7@vinuni.edu.vn | datlt203357 | Người kiểm số (Number verifier) |
 |   3 | Trần Minh Tân | 2A202603688 | minhtantran.contact@gmail.com | minhtantran99 | Người gắn nhãn 1 (Labeler 1) |
 |   4 |        |      |       |        | Người gắn nhãn 2 kiêm giữ hồ sơ (Document keeper) |
 
@@ -82,16 +82,19 @@ Sao chép mục dưới đây cho từng thành viên.
 
 ---
 
-## HoVaTen-MSSV
+## LeThanhDat-2A202603579
 
 ### Phần việc phụ trách
 
--
+- Người kiểm số: đối chiếu kết quả `src/lab13.py` với công thức và số tham chiếu; kiểm tra các phép tính chi phí, chi phí cả hệ thống và kịch bản B4.
 
 ### Đóng góp cụ thể
 
--
+- Kiểm tra A1 đạt 1,20; 1,25; 1,25 và rà phép tính A2: 4.373.585 / 978 ≈ 4.472 đ mỗi việc thành công (có chi phí dựa trên dữ liệu simulated).
+- Xác nhận ở B3, giới hạn 2 lần có tổng chi phí hệ thống thấp nhất (6.901.220 đ simulated), còn giới hạn 1 lần có CPS trợ lý thấp nhất (4.111 đ simulated); cập nhật cách ghi nhãn để phân biệt hai tiêu chí.
+- Đối chiếu B4: 11.173.313 / 900 = 12.414,79 đ; thống nhất hiển thị 12.415 đ khi làm tròn đến đồng gần nhất và đồng bộ số trong hướng dẫn.
 
 ### Bằng chứng
 
--
+- Output chạy `src/lab13.py`; cập nhật trong `report/team/bang_chi_phi.md` và `docs/Lab13_Huong_dan_chi_tiet_buoi_chieu.md`.
+- Báo cáo cá nhân: `report/team/2A202603579_LeThanhDat.md`.
