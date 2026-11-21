@@ -11,3 +11,5 @@ venv/
 example.zip
 example/
 __MACOSX/
+.idea/
+

@@ -7,7 +7,7 @@
 Người gắn nhãn 1: Trần Minh Tân · Người gắn nhãn 2: Phạm Ngọc Trung Quân (gắn trong 8 phút, không trao đổi)
 
 | Ca | Nhãn người 1 | Nhãn người 2 | Trùng? | Nhãn thống nhất |
-| --: | --- | --- | --- | --- |
+| --: | --- | --- | :---: | --- |
 | 1 | Do người dùng | Do người dùng | Có | Do người dùng |
 | 2 | Hệ thống | Hệ thống | Có | Hệ thống |
 | 3 | Ngữ cảnh | Ngữ cảnh | Có | Ngữ cảnh |
@@ -29,7 +29,14 @@ Người gắn nhãn 1: Trần Minh Tân · Người gắn nhãn 2: Phạm Ngọ
 | 19 | Giới hạn hệ thống | Giới hạn hệ thống | Có | Giới hạn hệ thống |
 | 20 | Hệ thống | Hệ thống | Có | Hệ thống |
 
-**Tỉ lệ đồng thuận:** 20 / 20 = 100%
+**Tỉ lệ đồng thuận:** 20 / 20 = 100% (Đạt tiêu chuẩn $\ge 80\%$)
+
+**Thống kê theo 5 nhóm:**
+- **Do người dùng (4 ca):** 1, 6, 9, 14
+- **Hệ thống (5 ca):** 2, 7, 8, 15, 20
+- **Ngữ cảnh (4 ca):** 3, 10, 16, 18
+- **Giới hạn hệ thống (4 ca):** 4, 11, 13, 19
+- **Ngầm (3 ca):** 5, 12, 17
 
 ## Quy tắc phân biệt cho các ca dễ lẫn
 
@@ -43,7 +50,7 @@ Các quy tắc giúp phân biệt chính xác nguyên nhân gốc giữa các nh
 
 ## Bảng khắc phục cho 5 ca, mỗi loại một ca
 
-Cách phát hiện phải đo được (event, ngưỡng, tần suất). Người phụ trách là một vai trò cụ thể, không ghi "cả đội".
+Cách phát hiện phải đo được (event, ngưỡng, tần suất). Người phụ trách là một vai trò cụ thể, tuyệt đối không ghi "cả đội".
 
 | Ca | Loại lỗi | Phát hiện bằng gì | Khắc phục thế nào | Ai phụ trách |
 | --: | --- | --- | --- | --- |
