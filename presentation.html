@@ -1,959 +1,961 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="vi" class="h-full">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Demo Thuyết Trình Gate 2a · Nhóm 4TL · Launch Economics LogiX-VN</title>
+  <title>Gate 2a Pilot Review · LogiX-VN Refund AI · Team 4TL</title>
   <script src="https://www.gstatic.com/antigravity/web/dev/tailwindcss.min.js"></script>
   <style>
-    :root {
-      --primary: #2563eb;
-      --primary-dark: #1d4ed8;
-      --accent: #0ea5e9;
-      --success: #10b981;
-      --warning: #f59e0b;
-      --danger: #ef4444;
-      --bg: #0f172a;
-      --card-bg: rgba(30, 41, 59, 0.85);
-      --card-border: rgba(255, 255, 255, 0.1);
-      --text: #f8fafc;
-      --text-muted: #94a3b8;
+    @layer base {
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        background-color: #0b0f19;
+        color: #f1f5f9;
+        overflow: hidden;
+      }
+      .font-mono {
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+        font-variant-numeric: tabular-nums;
+      }
     }
-    body {
-      background: radial-gradient(circle at 20% 20%, #1e1b4b 0%, #0f172a 50%, #020617 100%);
-      color: var(--text);
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-      min-height: 100vh;
+
+    .slide {
+      display: none;
+      opacity: 0;
+      transition: opacity 0.25s ease-in-out;
     }
-    .glass-card {
-      background: var(--card-bg);
-      backdrop-filter: blur(12px);
-      border: 1px solid var(--card-border);
-      border-radius: 1rem;
+    .slide.active {
+      display: flex;
+      opacity: 1;
     }
-    .metric-badge {
-      display: inline-flex;
-      align-items: center;
-      padding: 0.25rem 0.75rem;
-      border-radius: 9999px;
-      font-size: 0.75rem;
-      font-weight: 600;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
+
+    /* Clean subtle borders and backgrounds */
+    .panel {
+      background: #111726;
+      border: 1px solid #1e293b;
+      border-radius: 0.75rem;
     }
-    .tab-btn.active {
-      background: #3b82f6;
-      color: white;
-      box-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
+    .panel-accent {
+      background: #131d33;
+      border: 1px solid #2563eb40;
+      border-radius: 0.75rem;
     }
-    .custom-scrollbar::-webkit-scrollbar {
-      width: 6px;
-      height: 6px;
-    }
-    .custom-scrollbar::-webkit-scrollbar-thumb {
-      background: rgba(255, 255, 255, 0.2);
-      border-radius: 3px;
+
+    /* Custom range input */
+    input[type="range"] {
+      accent-color: #3b82f6;
     }
   </style>
 </head>
-<body class="p-4 md:p-8 antialiased selection:bg-blue-500 selection:text-white">
+<body class="h-full flex flex-col justify-between selection:bg-blue-600 selection:text-white">
 
-  <!-- TOP HEADER & TEAM BANNER -->
-  <header class="max-w-7xl mx-auto mb-8">
-    <div class="glass-card p-6 shadow-2xl flex flex-col md:flex-row justify-between items-center gap-6 border-blue-500/20">
-      <div class="flex items-center gap-4">
-        <div class="w-14 h-14 rounded-2xl bg-gradient-to-tr from-blue-600 to-cyan-400 flex items-center justify-center text-white shadow-lg shadow-blue-500/30">
-          <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
-        </div>
-        <div>
-          <div class="flex items-center gap-2">
-            <span class="metric-badge bg-blue-500/20 text-blue-400 border border-blue-500/30">Gate 2a Pilot Planning</span>
-            <span class="metric-badge bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">Nhóm 4TL · Lớp L3A</span>
-          </div>
-          <h1 class="text-2xl md:text-3xl font-extrabold tracking-tight mt-1 text-white">
-            LogiX-VN Refund Assistant · <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">Launch Economics</span>
-          </h1>
-          <p class="text-sm text-slate-400">Đánh giá kinh tế học chi phí hoàn thành (Cost of Pass), quản trị rủi ro & kế hoạch thực nghiệm pilot</p>
-        </div>
-      </div>
+  <!-- TOP STATUS BAR -->
+  <header class="h-14 border-b border-slate-800/80 px-6 flex items-center justify-between text-xs text-slate-400 bg-[#090d16] select-none z-20">
+    <div class="flex items-center gap-3">
+      <span class="font-mono font-semibold tracking-wider text-slate-200">LOGIX-VN</span>
+      <span class="text-slate-600">/</span>
+      <span class="text-slate-300">GATE 2A DOSSIER</span>
+      <span class="text-slate-600">/</span>
+      <span class="px-2 py-0.5 rounded bg-blue-950 text-blue-400 border border-blue-800/60 font-mono text-[11px]">PILOT PLANNING</span>
+    </div>
 
-      <!-- MEMBER PILLS -->
-      <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 w-full md:w-auto text-xs">
-        <div class="p-2.5 rounded-lg bg-slate-800/80 border border-slate-700/60">
-          <div class="text-blue-400 font-semibold">Nguyễn Trọng Hưởng</div>
-          <div class="text-slate-400">Code author (lab13.py)</div>
-        </div>
-        <div class="p-2.5 rounded-lg bg-slate-800/80 border border-slate-700/60">
-          <div class="text-emerald-400 font-semibold">Lê Thành Đạt</div>
-          <div class="text-slate-400">Number verifier</div>
-        </div>
-        <div class="p-2.5 rounded-lg bg-slate-800/80 border border-slate-700/60">
-          <div class="text-amber-400 font-semibold">Trần Minh Tân</div>
-          <div class="text-slate-400">Labeler 1 (Google PAIR)</div>
-        </div>
-        <div class="p-2.5 rounded-lg bg-slate-800/80 border border-slate-700/60">
-          <div class="text-purple-400 font-semibold">Phạm Ngọc Trung Quân</div>
-          <div class="text-slate-400">Document keeper (Gate 2a)</div>
-        </div>
+    <!-- Center Slide Breadcrumb -->
+    <div class="hidden md:flex items-center gap-2 text-slate-400 font-medium">
+      <span id="nav-section-title" class="text-slate-200 font-semibold">TỔNG QUAN HỒ SƠ</span>
+    </div>
+
+    <!-- Right: Progress Indicator & Team Info -->
+    <div class="flex items-center gap-4">
+      <div class="flex items-center gap-1.5 font-mono text-slate-300">
+        <span id="slide-num-current" class="text-blue-400 font-bold">01</span>
+        <span class="text-slate-600">/</span>
+        <span id="slide-num-total" class="text-slate-500">09</span>
       </div>
+      <div class="h-3.5 w-px bg-slate-800"></div>
+      <div class="text-slate-400 font-mono text-[11px]">TEAM 4TL · L3A</div>
     </div>
   </header>
 
-  <!-- NAVIGATION TABS -->
-  <nav class="max-w-7xl mx-auto mb-8">
-    <div class="flex items-center gap-2 overflow-x-auto pb-2 custom-scrollbar">
-      <button onclick="switchTab('tab-iceberg')" id="btn-tab-iceberg" class="tab-btn active px-4 py-2.5 rounded-xl text-sm font-semibold transition-all duration-200 flex items-center gap-2 bg-slate-800 text-slate-300 hover:text-white whitespace-nowrap">
-        <span>🧊</span> 1. Tảng Băng Chi Phí (A2)
-      </button>
-      <button onclick="switchTab('tab-scope')" id="btn-tab-scope" class="tab-btn px-4 py-2.5 rounded-xl text-sm font-semibold transition-all duration-200 flex items-center gap-2 bg-slate-800 text-slate-300 hover:text-white whitespace-nowrap">
-        <span>🎯</span> 2. Phân Khúc Kinh Tế (A3-A4)
-      </button>
-      <button onclick="switchTab('tab-paradox')" id="btn-tab-paradox" class="tab-btn px-4 py-2.5 rounded-xl text-sm font-semibold transition-all duration-200 flex items-center gap-2 bg-slate-800 text-slate-300 hover:text-white whitespace-nowrap">
-        <span>⚡</span> 3. Nghịch Lý B3 & Bẫy B4
-      </button>
-      <button onclick="switchTab('tab-pair')" id="btn-tab-pair" class="tab-btn px-4 py-2.5 rounded-xl text-sm font-semibold transition-all duration-200 flex items-center gap-2 bg-slate-800 text-slate-300 hover:text-white whitespace-nowrap">
-        <span>🏷️</span> 4. Phân Loại Lỗi PAIR (C)
-      </button>
-      <button onclick="switchTab('tab-pilot')" id="btn-tab-pilot" class="tab-btn px-4 py-2.5 rounded-xl text-sm font-semibold transition-all duration-200 flex items-center gap-2 bg-slate-800 text-slate-300 hover:text-white whitespace-nowrap">
-        <span>🧪</span> 5. Kế Hoạch Pilot (D-E)
-      </button>
-      <button onclick="switchTab('tab-simulator')" id="btn-tab-simulator" class="tab-btn px-4 py-2.5 rounded-xl text-sm font-semibold transition-all duration-200 flex items-center gap-2 bg-slate-800 text-slate-300 hover:text-white whitespace-nowrap">
-        <span>🎛️</span> 6. Bộ Mô Phỏng Real-time
-      </button>
-      <button onclick="switchTab('tab-decision')" id="btn-tab-decision" class="tab-btn px-4 py-2.5 rounded-xl text-sm font-semibold transition-all duration-200 flex items-center gap-2 bg-slate-800 text-slate-300 hover:text-white whitespace-nowrap">
-        <span>🏁</span> 7. Quyết Định Gate 2a
-      </button>
-    </div>
-  </nav>
+  <!-- PROGRESS BAR -->
+  <div class="w-full bg-slate-900 h-1">
+    <div id="progress-bar" class="bg-blue-500 h-1 transition-all duration-300 ease-out" style="width: 11.11%;"></div>
+  </div>
 
-  <!-- MAIN PRESENTATION CONTAINER -->
-  <main class="max-w-7xl mx-auto space-y-8">
+  <!-- SLIDE VIEWPORT (CENTER) -->
+  <div class="flex-1 relative overflow-y-auto overflow-x-hidden flex items-center justify-center p-4 md:p-8">
+    <div class="w-full max-w-6xl mx-auto h-full flex items-center justify-center">
 
-    <!-- TAB 1: TẢNG BĂNG CHI PHÍ (A2) -->
-    <section id="tab-iceberg" class="tab-content block">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
-        
-        <!-- Left: Iceberg Visualization Card -->
-        <div class="lg:col-span-7 glass-card p-6 flex flex-col justify-between">
-          <div>
-            <div class="flex items-center justify-between mb-4">
-              <h2 class="text-xl font-bold text-white flex items-center gap-2">
-                <span class="p-2 rounded-lg bg-blue-500/20 text-blue-400">🧊</span>
-                Tảng Băng Chi Phí: Hoá Đơn vs. Chi Phí Thực Tế
-              </h2>
-              <span class="text-xs font-mono px-2.5 py-1 rounded bg-slate-800 text-cyan-300 border border-slate-700">A2 · Trace 1.200 YC</span>
-            </div>
-            <p class="text-sm text-slate-300 mb-6">
-              Ảo tưởng lớn nhất khi triển khai AI là chỉ nhìn vào <strong>hoá đơn token API (274,7 đ)</strong>. Trên thực tế, chi phí thực tế cho mỗi việc thành công (Cost of Pass - CPS) là <strong>4.472 đ [simulated]</strong> — gấp <span class="text-amber-400 font-bold">16,3 lần</span>!
-            </p>
-
-            <!-- SVG ICEBERG DIAGRAM -->
-            <div class="relative bg-slate-900/90 rounded-2xl p-6 border border-slate-800 overflow-hidden">
-              <svg viewBox="0 0 600 320" class="w-full h-auto">
-                <defs>
-                  <linearGradient id="skyGrad" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="0%" stop-color="#0f172a"/>
-                    <stop offset="100%" stop-color="#1e293b"/>
-                  </linearGradient>
-                  <linearGradient id="seaGrad" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="0%" stop-color="#0284c7" stop-opacity="0.3"/>
-                    <stop offset="100%" stop-color="#0369a1" stop-opacity="0.8"/>
-                  </linearGradient>
-                  <linearGradient id="iceTip" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="0%" stop-color="#e0f2fe"/>
-                    <stop offset="100%" stop-color="#bae6fd"/>
-                  </linearGradient>
-                  <linearGradient id="iceDeep" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="0%" stop-color="#7dd3fc"/>
-                    <stop offset="100%" stop-color="#0284c7"/>
-                  </linearGradient>
-                </defs>
-
-                <!-- Water line -->
-                <rect x="0" y="100" width="600" height="220" fill="url(#seaGrad)" rx="8"/>
-                <line x1="0" y1="100" x2="600" y2="100" stroke="#38bdf8" stroke-width="2" stroke-dasharray="6,4"/>
-                <text x="500" y="90" fill="#38bdf8" font-size="11" font-weight="bold">MẶT NƯỚC (Ranh giới)</text>
-
-                <!-- Iceberg Tip (Above Water) -->
-                <polygon points="300,30 240,100 360,100" fill="url(#iceTip)" stroke="#ffffff" stroke-width="1.5"/>
-                <!-- Iceberg Deep (Below Water) -->
-                <polygon points="240,100 360,100 420,280 180,280" fill="url(#iceDeep)" opacity="0.9" stroke="#38bdf8" stroke-width="1"/>
-
-                <!-- Labels Above -->
-                <circle cx="300" cy="65" r="4" fill="#ef4444"/>
-                <line x1="300" y1="65" x2="150" y2="45" stroke="#f87171" stroke-width="1.5"/>
-                <text x="20" y="40" fill="#f87171" font-size="12" font-weight="bold">PHẦN NỔI: Hoá đơn API</text>
-                <text x="20" y="58" fill="#fca5a5" font-size="11">Token: 245.585 đ (5,6%)</text>
-                <text x="20" y="73" fill="#fca5a5" font-size="11">Tool: 84.000 đ (1,9%)</text>
-                <text x="20" y="90" fill="#fef08a" font-size="12" font-weight="bold">👉 274,7 đ / Yêu cầu</text>
-
-                <!-- Labels Below -->
-                <circle cx="300" cy="160" r="5" fill="#f59e0b"/>
-                <line x1="300" y1="160" x2="450" y2="150" stroke="#fbbf24" stroke-width="1.5"/>
-                <text x="460" y="145" fill="#fbbf24" font-size="12" font-weight="bold">XEM LẠI: 40,7%</text>
-                <text x="460" y="162" fill="#fef3c7" font-size="11">1.780.000 đ [simulated]</text>
-
-                <circle cx="300" cy="225" r="5" fill="#ef4444"/>
-                <line x1="300" y1="225" x2="450" y2="215" stroke="#f87171" stroke-width="1.5"/>
-                <text x="460" y="210" fill="#f87171" font-size="12" font-weight="bold">LÀM LẠI: 51,8% (Lớn nhất!)</text>
-                <text x="460" y="227" fill="#fee2e2" font-size="11">2.264.000 đ [simulated]</text>
-
-                <!-- Big Summary Bottom Box -->
-                <rect x="150" y="270" width="300" height="40" rx="8" fill="#0f172a" stroke="#38bdf8" stroke-width="1"/>
-                <text x="300" y="295" fill="#38bdf8" font-size="13" font-weight="bold" text-anchor="middle">
-                  GIỜ NHÂN VIÊN CHIẾM 92,5% CHI PHÍ
-                </text>
-              </svg>
-            </div>
+      <!-- SLIDE 1: COVER & EXECUTIVE SUMMARY -->
+      <section id="slide-1" class="slide active w-full flex-col justify-between py-4 max-w-5xl">
+        <div class="space-y-6">
+          <div class="inline-flex items-center gap-2 px-2.5 py-1 rounded bg-slate-800/80 border border-slate-700 text-xs font-mono text-slate-300">
+            <span>VINAI RESEARCH & EDUCATION</span>
+            <span class="text-slate-500">·</span>
+            <span>DAY 13 GATE 2A</span>
           </div>
 
-          <div class="mt-4 p-4 rounded-xl bg-blue-950/40 border border-blue-800/40 text-xs text-blue-200">
-            💡 <strong>Punchline thuyết trình:</strong> <em>"Nếu chỉ trình hoá đơn token cho ban giám đốc, chúng ta đang lừa dối chính mình. Chi phí AI thực sự là thời gian nhân viên phải xem lại và sửa lỗi của AI!"</em>
-          </div>
-        </div>
+          <h1 class="text-4xl md:text-5xl font-bold tracking-tight text-white leading-tight">
+            Kinh Tế Học Vận Hành <br/>
+            <span class="text-blue-400">Trợ Lý Hoàn Phí LogiX-VN</span>
+          </h1>
 
-        <!-- Right: Breakdown Metrics & Math -->
-        <div class="lg:col-span-5 space-y-6">
-          <div class="glass-card p-6">
-            <h3 class="text-base font-bold text-white mb-4 flex items-center justify-between">
-              <span>Bảng Phân Bổ Chi Phí Gốc (A2)</span>
-              <span class="text-xs text-slate-400">978 việc thành công</span>
-            </h3>
+          <p class="text-base md:text-lg text-slate-300 max-w-3xl leading-relaxed">
+            Thẩm định mô hình kinh tế chi phí hoàn thành (Cost of Pass), phân loại rủi ro theo Google PAIR, thiết kế thử nghiệm pilot ngẫu nhiên phân cụm (Cluster-RCT) và bộ luật an toàn trước hội đồng duyệt thử nghiệm.
+          </p>
 
-            <div class="space-y-3 text-sm">
-              <div class="flex items-center justify-between p-2.5 rounded-lg bg-slate-800/60 border border-slate-700/50">
-                <span class="text-slate-300">1. Token LLM</span>
-                <span class="font-mono font-bold text-slate-200">245.585 đ <span class="text-xs text-slate-400 font-normal">(5,6%)</span></span>
-              </div>
-              <div class="flex items-center justify-between p-2.5 rounded-lg bg-slate-800/60 border border-slate-700/50">
-                <span class="text-slate-300">2. Tool Calls</span>
-                <span class="font-mono font-bold text-slate-200">84.000 đ <span class="text-xs text-slate-400 font-normal">(1,9%)</span></span>
-              </div>
-              <div class="flex items-center justify-between p-2.5 rounded-lg bg-slate-800/60 border border-slate-700/50">
-                <span class="text-slate-300">3. Chạy lại (Attempt 2 & 3)</span>
-                <span class="font-mono text-cyan-300">93.804 đ <span class="text-xs text-slate-400 font-normal">(trong token+tool)</span></span>
-              </div>
-              <div class="flex items-center justify-between p-2.5 rounded-lg bg-amber-950/30 border border-amber-800/40">
-                <span class="text-amber-300">4. Xem lại (Review)</span>
-                <span class="font-mono font-bold text-amber-400">1.780.000 đ <span class="text-xs text-amber-300 font-normal">[sim] (40,7%)</span></span>
-              </div>
-              <div class="flex items-center justify-between p-2.5 rounded-lg bg-red-950/30 border border-red-800/40">
-                <span class="text-red-300 font-semibold">5. Làm lại (Rework)</span>
-                <span class="font-mono font-bold text-red-400">2.264.000 đ <span class="text-xs text-red-300 font-normal">[sim] (51,8%)</span></span>
-              </div>
-              <div class="pt-2 border-t border-slate-700 flex items-center justify-between text-base font-extrabold">
-                <span class="text-white">TỔNG CHI PHÍ:</span>
-                <span class="text-cyan-400 font-mono">4.373.585 đ</span>
-              </div>
-              <div class="p-3 rounded-xl bg-gradient-to-r from-blue-900/50 to-indigo-900/50 border border-blue-500/30 flex items-center justify-between">
-                <div>
-                  <div class="text-xs text-blue-200 uppercase font-semibold">Cost of Pass (CPS)</div>
-                  <div class="text-xl font-black text-white font-mono">4.472 đ <span class="text-xs font-normal text-slate-300">[simulated]</span></div>
-                </div>
-                <div class="text-right">
-                  <div class="text-xs text-slate-300">So với người làm (12.000 đ)</div>
-                  <span class="metric-badge bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">0,37× (Tiết kiệm 63%)</span>
-                </div>
-              </div>
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-3 pt-4 border-t border-slate-800/80 text-xs font-mono">
+            <div class="p-3.5 panel">
+              <div class="text-slate-500 text-[10px] uppercase tracking-wider mb-1">Mô Hình & Code</div>
+              <div class="text-slate-200 font-semibold">Nguyễn Trọng Hưởng</div>
+              <div class="text-blue-400 text-[11px]">2A202603607</div>
             </div>
-          </div>
-
-          <!-- Quick Test Verification Card -->
-          <div class="glass-card p-5 border-emerald-500/20">
-            <div class="flex items-center gap-2 mb-2 text-emerald-400 font-bold text-sm">
-              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-              Đã kiểm chứng toán học (A1 Tests: ĐẠT)
+            <div class="p-3.5 panel">
+              <div class="text-slate-500 text-[10px] uppercase tracking-wider mb-1">Kiểm Số Độc Lập</div>
+              <div class="text-slate-200 font-semibold">Lê Thành Đạt</div>
+              <div class="text-emerald-400 text-[11px]">2A202603579</div>
             </div>
-            <div class="grid grid-cols-3 gap-2 text-center text-xs mt-3">
-              <div class="p-2 rounded bg-slate-800 border border-slate-700">
-                <div class="text-slate-400">Tối đa 2 lần</div>
-                <div class="text-emerald-400 font-mono font-bold text-sm">1,20 runs</div>
-              </div>
-              <div class="p-2 rounded bg-slate-800 border border-slate-700">
-                <div class="text-slate-400">Đến khi đúng</div>
-                <div class="text-emerald-400 font-mono font-bold text-sm">1,25 runs</div>
-              </div>
-              <div class="p-2 rounded bg-slate-800 border border-slate-700">
-                <div class="text-slate-400">Hệ số CPS max 3</div>
-                <div class="text-emerald-400 font-mono font-bold text-sm">1,25× cost</div>
-              </div>
+            <div class="p-3.5 panel">
+              <div class="text-slate-500 text-[10px] uppercase tracking-wider mb-1">Gắn Nhãn PAIR 1</div>
+              <div class="text-slate-200 font-semibold">Trần Minh Tân</div>
+              <div class="text-amber-400 text-[11px]">2A202603688</div>
             </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- TAB 2: PHÂN KHÚC KINH TẾ (A3-A4) -->
-    <section id="tab-scope" class="tab-content hidden">
-      <div class="glass-card p-6">
-        <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-6">
-          <div>
-            <h2 class="text-xl font-bold text-white flex items-center gap-2">
-              <span class="p-2 rounded-lg bg-emerald-500/20 text-emerald-400">🎯</span>
-              Phân Rã 4 Phân Khúc: Định Hình Phạm Vi Pilot
-            </h2>
-            <p class="text-sm text-slate-300">Không thể áp dụng AI đại trà. Cần phân loại rõ luồng nào có lãi kinh tế, luồng nào gây lỗ nặng.</p>
-          </div>
-          <div class="flex gap-2">
-            <span class="metric-badge bg-emerald-500/20 text-emerald-300 border border-emerald-500/40">Giữ: noi_dia + hang_nang</span>
-            <span class="metric-badge bg-red-500/20 text-red-300 border border-red-500/40">Cắt: quoc_te + doi_tac</span>
-          </div>
-        </div>
-
-        <!-- 4 SEGMENTS COMPARISON CARDS -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
-          
-          <!-- Noi Dia Card -->
-          <div class="p-5 rounded-2xl bg-gradient-to-b from-emerald-950/40 to-slate-900 border-2 border-emerald-500/60 shadow-lg relative overflow-hidden">
-            <div class="absolute top-2 right-2 px-2 py-0.5 rounded bg-emerald-500/30 text-emerald-300 text-[10px] font-bold uppercase tracking-wider">
-              Khuyến nghị triển khai
-            </div>
-            <div class="text-xs text-slate-400 mb-1">Đơn Trong Nước</div>
-            <div class="text-lg font-bold text-white mb-2">noi_dia (824 YC)</div>
-            <div class="space-y-1.5 text-xs text-slate-300 mb-4">
-              <div class="flex justify-between"><span>Tỉ lệ thành công:</span> <strong class="text-emerald-400">95,0%</strong></div>
-              <div class="flex justify-between"><span>Runs trung bình:</span> <strong class="text-slate-200">1,11 runs/YC</strong></div>
-              <div class="flex justify-between"><span>CPS [simulated]:</span> <strong class="text-emerald-300 text-sm">2.696 đ</strong></div>
-              <div class="flex justify-between"><span>So với 12.000 đ:</span> <strong class="text-emerald-400 font-bold">0,22× (Tiết kiệm 77,5%)</strong></div>
-            </div>
-            <div class="text-xs text-emerald-200 p-2 rounded bg-emerald-900/30 border border-emerald-700/40">
-              ✔️ Luồng chủ lực, tỉ lệ đúng ngay lần đầu 91,0%, cực kỳ kinh tế.
-            </div>
-          </div>
-
-          <!-- Hang Nang Card -->
-          <div class="p-5 rounded-2xl bg-gradient-to-b from-blue-950/40 to-slate-900 border-2 border-blue-500/60 shadow-lg relative overflow-hidden">
-            <div class="absolute top-2 right-2 px-2 py-0.5 rounded bg-blue-500/30 text-blue-300 text-[10px] font-bold uppercase tracking-wider">
-              Cấp phép pilot
-            </div>
-            <div class="text-xs text-slate-400 mb-1">Hàng Cồng Kềnh</div>
-            <div class="text-lg font-bold text-white mb-2">hang_nang (158 YC)</div>
-            <div class="space-y-1.5 text-xs text-slate-300 mb-4">
-              <div class="flex justify-between"><span>Tỉ lệ thành công:</span> <strong class="text-blue-400">74,1%</strong></div>
-              <div class="flex justify-between"><span>Runs trung bình:</span> <strong class="text-slate-200">1,47 runs/YC</strong></div>
-              <div class="flex justify-between"><span>CPS [simulated]:</span> <strong class="text-blue-300 text-sm">8.221 đ</strong></div>
-              <div class="flex justify-between"><span>So với 12.000 đ:</span> <strong class="text-blue-400 font-bold">0,69× (Tiết kiệm 31,5%)</strong></div>
-            </div>
-            <div class="text-xs text-blue-200 p-2 rounded bg-blue-900/30 border border-blue-700/40">
-              ✔️ Đạt hiệu quả kinh tế, cần theo dõi kiểm soát tỉ lệ xem lại.
-            </div>
-          </div>
-
-          <!-- Quoc Te Card -->
-          <div class="p-5 rounded-2xl bg-gradient-to-b from-red-950/40 to-slate-900 border-2 border-red-500/60 shadow-lg relative overflow-hidden">
-            <div class="absolute top-2 right-2 px-2 py-0.5 rounded bg-red-500/30 text-red-300 text-[10px] font-bold uppercase tracking-wider">
-              LỖ NẶNG · LOẠI BỎ
-            </div>
-            <div class="text-xs text-slate-400 mb-1">Đơn Quốc Tế</div>
-            <div class="text-lg font-bold text-white mb-2">quoc_te (150 YC)</div>
-            <div class="space-y-1.5 text-xs text-slate-300 mb-4">
-              <div class="flex justify-between"><span>Tỉ lệ thành công:</span> <strong class="text-red-400">27,3%</strong></div>
-              <div class="flex justify-between"><span>Runs trung bình:</span> <strong class="text-slate-200">2,32 runs/YC</strong></div>
-              <div class="flex justify-between"><span>CPS [simulated]:</span> <strong class="text-red-400 text-sm">22.515 đ</strong></div>
-              <div class="flex justify-between"><span>So với 12.000 đ:</span> <strong class="text-red-400 font-bold">1,88× (Đắt gấp gần 2 lần!)</strong></div>
-            </div>
-            <div class="text-xs text-red-200 p-2 rounded bg-red-900/30 border border-red-700/40">
-              ❌ Attempt 3 tỉ lệ đúng chỉ 2,2%. Càng retry càng tốn tiền.
-            </div>
-          </div>
-
-          <!-- Doi Tac Card -->
-          <div class="p-5 rounded-2xl bg-gradient-to-b from-amber-950/40 to-slate-900 border-2 border-amber-500/60 shadow-lg relative overflow-hidden">
-            <div class="absolute top-2 right-2 px-2 py-0.5 rounded bg-amber-500/30 text-amber-300 text-[10px] font-bold uppercase tracking-wider">
-              RỦI RO · CHUYỂN NGƯỜI
-            </div>
-            <div class="text-xs text-slate-400 mb-1">Đối Tác Sàn TMĐT</div>
-            <div class="text-lg font-bold text-white mb-2">doi_tac (68 YC)</div>
-            <div class="space-y-1.5 text-xs text-slate-300 mb-4">
-              <div class="flex justify-between"><span>Tỉ lệ thành công:</span> <strong class="text-amber-400">54,4%</strong></div>
-              <div class="flex justify-between"><span>Runs trung bình:</span> <strong class="text-slate-200">1,88 runs/YC</strong></div>
-              <div class="flex justify-between"><span>CPS [simulated]:</span> <strong class="text-amber-300 text-sm">10.215 đ</strong></div>
-              <div class="flex justify-between"><span>So với 12.000 đ:</span> <strong class="text-amber-400 font-bold">0,85× (Biên an toàn mỏng)</strong></div>
-            </div>
-            <div class="text-xs text-amber-200 p-2 rounded bg-amber-900/30 border border-amber-700/40">
-              ⚠️ Attempt 1 thành công chỉ 51,5%. Dữ liệu bảo hiểm ngoài biên.
+            <div class="p-3.5 panel">
+              <div class="text-slate-500 text-[10px] uppercase tracking-wider mb-1">Hồ Sơ & Gắn Nhãn 2</div>
+              <div class="text-slate-200 font-semibold">Phạm Ngọc Trung Quân</div>
+              <div class="text-purple-400 text-[11px]">2A202603626</div>
             </div>
           </div>
         </div>
 
-        <!-- A4 FIXED COST ANALYSIS -->
-        <div class="p-5 rounded-2xl bg-slate-900/80 border border-slate-700/60">
-          <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-4">
+        <div class="flex items-center justify-between text-xs text-slate-500 pt-6 border-t border-slate-800">
+          <div>Trạng thái thẩm định: <span class="text-emerald-400 font-mono font-semibold">CONDITIONAL GO</span></div>
+          <div>Baseline đối chứng: <span class="text-slate-300 font-mono">12.000 đ / việc</span> (Nhân viên thủ công)</div>
+        </div>
+      </section>
+
+      <!-- SLIDE 2: THE COST OF PASS REALITY (A2) -->
+      <section id="slide-2" class="slide w-full flex-col justify-between py-2 max-w-5xl">
+        <div>
+          <div class="flex justify-between items-baseline mb-6 border-b border-slate-800 pb-3">
             <div>
-              <h3 class="text-base font-bold text-white flex items-center gap-2">
-                <span>🏢</span> A4 · Phân Bổ Chi Phí Cố Định (40.000.000 đ/tháng cho noi_dia + hang_nang)
-              </h3>
-              <p class="text-xs text-slate-400">Kiểm tra khả năng chịu tải chi phí cố định khi quy mô thay đổi</p>
+              <div class="text-xs font-mono text-blue-400 uppercase tracking-wider">NHIỆM VỤ A2 · CHI PHÍ THỰC TẾ</div>
+              <h2 class="text-2xl md:text-3xl font-bold text-white mt-1">Ảo Tưởng Hoá Đơn vs. Chi Phí Hoàn Thành (CPS)</h2>
             </div>
-            <span class="text-xs text-emerald-400 font-bold bg-emerald-500/20 px-3 py-1 rounded-full border border-emerald-500/30">
-              KẾT LUẬN: KHÔNG THAY ĐỔI QUYẾT ĐỊNH
-            </span>
+            <div class="text-right font-mono text-xs text-slate-400">
+              Mẫu: 1.200 Yêu Cầu · 978 Việc Thành Công
+            </div>
           </div>
 
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
-            <div class="p-4 rounded-xl bg-slate-800/60 border border-slate-700/50">
-              <div class="font-semibold text-cyan-300 mb-2">Quy mô đầy đủ: 45.000 YC/tháng</div>
-              <ul class="space-y-1 text-xs text-slate-300">
-                <li>• Số việc thành công: <strong>33.750 việc</strong></li>
-                <li>• Phân bổ cố định: <strong>1.185 đ/việc</strong></li>
-                <li>• CPS + Cố định: <strong class="text-emerald-400 text-sm">4.599 đ</strong> (0,38× mức 12.000 đ)</li>
-              </ul>
+          <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-stretch">
+            
+            <!-- Left: The False Metric -->
+            <div class="md:col-span-5 panel p-5 flex flex-col justify-between border-slate-800">
+              <div>
+                <div class="text-xs font-mono uppercase tracking-wider text-slate-400 mb-2">Số liệu gây hiểu nhầm (Hoá đơn token)</div>
+                <div class="text-3xl font-mono font-bold text-slate-300">274,7 đ</div>
+                <div class="text-xs text-slate-500 mt-1">Hoá đơn token + tool / tổng số yêu cầu</div>
+                
+                <div class="mt-6 space-y-2 text-xs border-t border-slate-800 pt-4">
+                  <div class="flex justify-between text-slate-400">
+                    <span>• Token LLM:</span>
+                    <span class="font-mono text-slate-200">245.585 đ (5,6%)</span>
+                  </div>
+                  <div class="flex justify-between text-slate-400">
+                    <span>• Tool execution:</span>
+                    <span class="font-mono text-slate-200">84.000 đ (1,9%)</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="p-3 rounded bg-red-950/20 border border-red-900/40 text-[11px] text-red-300 mt-4">
+                ⚠ Chỉ phản ánh <strong>7,5% chi phí thực tế</strong>. Hoàn toàn bỏ quên thời gian con người phải can thiệp.
+              </div>
             </div>
-            <div class="p-4 rounded-xl bg-slate-800/60 border border-slate-700/50">
-              <div class="font-semibold text-amber-300 mb-2">Kịch bản hụt nửa khối lượng: 22.500 YC/tháng</div>
-              <ul class="space-y-1 text-xs text-slate-300">
-                <li>• Số việc thành công: <strong>16.875 việc</strong></li>
-                <li>• Phân bổ cố định: <strong>2.370 đ/việc</strong></li>
-                <li>• CPS + Cố định: <strong class="text-amber-400 text-sm">5.784 đ</strong> (0,48× mức 12.000 đ)</li>
-              </ul>
+
+            <!-- Right: The True Cost-of-Pass -->
+            <div class="md:col-span-7 panel-accent p-5 flex flex-col justify-between border-blue-500/40">
+              <div>
+                <div class="flex justify-between items-baseline mb-2">
+                  <div class="text-xs font-mono uppercase tracking-wider text-blue-300">Chi phí thực tế mỗi việc thành công (Cost of Pass)</div>
+                  <span class="text-[11px] font-mono text-emerald-400">0,37× Người Làm</span>
+                </div>
+
+                <div class="flex items-baseline gap-3">
+                  <div class="text-4xl font-mono font-bold text-white">4.472 đ</div>
+                  <span class="text-xs text-slate-400 font-mono">[simulated]</span>
+                  <span class="text-xs text-amber-400 font-semibold font-mono">(Gấp 16,3× hoá đơn token)</span>
+                </div>
+
+                <!-- Waterfall / Breakdown bars -->
+                <div class="mt-5 space-y-3">
+                  <div>
+                    <div class="flex justify-between text-xs mb-1">
+                      <span class="text-slate-300">Làm lại (Rework khi AI sai)</span>
+                      <span class="font-mono text-red-400 font-bold">2.264.000 đ (51,8%)</span>
+                    </div>
+                    <div class="w-full bg-slate-900 h-2 rounded-full overflow-hidden">
+                      <div class="bg-red-500 h-2 rounded-full" style="width: 51.8%"></div>
+                    </div>
+                  </div>
+
+                  <div>
+                    <div class="flex justify-between text-xs mb-1">
+                      <span class="text-slate-300">Xem lại (Review con người)</span>
+                      <span class="font-mono text-amber-400 font-bold">1.780.000 đ (40,7%)</span>
+                    </div>
+                    <div class="w-full bg-slate-900 h-2 rounded-full overflow-hidden">
+                      <div class="bg-amber-500 h-2 rounded-full" style="width: 40.7%"></div>
+                    </div>
+                  </div>
+
+                  <div>
+                    <div class="flex justify-between text-xs mb-1">
+                      <span class="text-slate-400">Token & Tool tính toán</span>
+                      <span class="font-mono text-slate-400 font-bold">329.585 đ (7,5%)</span>
+                    </div>
+                    <div class="w-full bg-slate-900 h-2 rounded-full overflow-hidden">
+                      <div class="bg-blue-500 h-2 rounded-full" style="width: 7.5%"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mt-4 p-3 rounded bg-blue-950/40 border border-blue-800/40 text-xs text-blue-200">
+                <strong>Kết luận cốt lõi:</strong> Thời gian nhân viên chiếm <strong>92,5% tổng chi phí</strong>. Muốn AI có lãi, đòn bẩy duy nhất là giảm can thiệp của con người, không phải tối ưu prompt để giảm token!
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="text-xs text-slate-500 pt-4 border-t border-slate-800 flex justify-between font-mono">
+          <span>Tổng chi phí: 4.373.585 đ</span>
+          <span>Số việc thành công: 978</span>
+          <span>Baseline nhân viên tự làm: 12.000 đ / việc</span>
+        </div>
+      </section>
+
+      <!-- SLIDE 3: SCOPE ELIMINATION & AMORTIZATION (A3-A4) -->
+      <section id="slide-3" class="slide w-full flex-col justify-between py-2 max-w-5xl">
+        <div>
+          <div class="flex justify-between items-baseline mb-6 border-b border-slate-800 pb-3">
+            <div>
+              <div class="text-xs font-mono text-emerald-400 uppercase tracking-wider">NHIỆM VỤ A3 & A4 · PHÂN RÃ PHẠM VI</div>
+              <h2 class="text-2xl md:text-3xl font-bold text-white mt-1">Cắt Bỏ Phân Khúc Lỗ & Khả Năng Chịu Tải Chi Phí Cố Định</h2>
+            </div>
+            <div class="text-right font-mono text-xs text-slate-400">
+              Sàng lọc trên 4 luồng nghiệp vụ
+            </div>
+          </div>
+
+          <!-- 4 Segments Table / Matrix -->
+          <div class="panel overflow-hidden mb-6">
+            <table class="w-full text-xs text-left">
+              <thead class="bg-slate-900/90 text-slate-400 font-mono uppercase text-[11px] border-b border-slate-800">
+                <tr>
+                  <th class="p-3">Phân loại yêu cầu</th>
+                  <th class="p-3 text-right">Số YC</th>
+                  <th class="p-3 text-right">Thành công</th>
+                  <th class="p-3 text-right">Runs/YC</th>
+                  <th class="p-3 text-right">CPS [simulated]</th>
+                  <th class="p-3 text-right">So với 12k</th>
+                  <th class="p-3 text-center">Phán quyết</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-slate-800/80 font-mono">
+                <tr class="bg-emerald-950/10">
+                  <td class="p-3 font-bold text-slate-200">noi_dia</td>
+                  <td class="p-3 text-right text-slate-400">824</td>
+                  <td class="p-3 text-right text-emerald-400 font-bold">95,0%</td>
+                  <td class="p-3 text-right text-slate-400">1,11</td>
+                  <td class="p-3 text-right text-emerald-300 font-bold">2.696 đ</td>
+                  <td class="p-3 text-right text-emerald-400 font-bold">0,22×</td>
+                  <td class="p-3 text-center"><span class="px-2 py-0.5 rounded bg-emerald-950 text-emerald-400 border border-emerald-800/60 font-semibold">TRIỂN KHAI</span></td>
+                </tr>
+                <tr class="bg-blue-950/10">
+                  <td class="p-3 font-bold text-slate-200">hang_nang</td>
+                  <td class="p-3 text-right text-slate-400">158</td>
+                  <td class="p-3 text-right text-blue-400 font-bold">74,1%</td>
+                  <td class="p-3 text-right text-slate-400">1,47</td>
+                  <td class="p-3 text-right text-blue-300 font-bold">8.221 đ</td>
+                  <td class="p-3 text-right text-blue-400 font-bold">0,69×</td>
+                  <td class="p-3 text-center"><span class="px-2 py-0.5 rounded bg-blue-950 text-blue-400 border border-blue-800/60 font-semibold">CẤP PHÉP PILOT</span></td>
+                </tr>
+                <tr class="bg-red-950/20">
+                  <td class="p-3 font-bold text-red-300">quoc_te</td>
+                  <td class="p-3 text-right text-slate-400">150</td>
+                  <td class="p-3 text-right text-red-400 font-bold">27,3%</td>
+                  <td class="p-3 text-right text-slate-400">2,32</td>
+                  <td class="p-3 text-right text-red-400 font-bold">22.515 đ</td>
+                  <td class="p-3 text-right text-red-400 font-bold">1,88×</td>
+                  <td class="p-3 text-center"><span class="px-2 py-0.5 rounded bg-red-950 text-red-400 border border-red-800/60 font-semibold">CẮT BỎ (LỖ NẶNG)</span></td>
+                </tr>
+                <tr class="bg-amber-950/10">
+                  <td class="p-3 font-bold text-amber-200">doi_tac</td>
+                  <td class="p-3 text-right text-slate-400">68</td>
+                  <td class="p-3 text-right text-amber-400 font-bold">54,4%</td>
+                  <td class="p-3 text-right text-slate-400">1,88</td>
+                  <td class="p-3 text-right text-amber-300 font-bold">10.215 đ</td>
+                  <td class="p-3 text-right text-amber-400 font-bold">0,85×</td>
+                  <td class="p-3 text-center"><span class="px-2 py-0.5 rounded bg-amber-950 text-amber-400 border border-amber-800/60 font-semibold">CHUYỂN NGƯỜI</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Fixed cost assessment -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs font-mono">
+            <div class="panel p-4">
+              <div class="text-slate-400 uppercase text-[10px] mb-1">A4 · Quy mô đầy đủ (45.000 YC/tháng)</div>
+              <div class="text-sm font-bold text-slate-200">33.750 việc TC · Phân bổ: 1.185 đ/việc</div>
+              <div class="text-emerald-400 mt-2 font-bold text-base">Tổng CPS: 4.599 đ (0,38×)</div>
+            </div>
+            <div class="panel p-4">
+              <div class="text-slate-400 uppercase text-[10px] mb-1">A4 · Kịch bản hụt nửa khối lượng (22.500 YC/tháng)</div>
+              <div class="text-sm font-bold text-slate-200">16.875 việc TC · Phân bổ: 2.370 đ/việc</div>
+              <div class="text-amber-400 mt-2 font-bold text-base">Tổng CPS: 5.784 đ (0,48×)</div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
 
-    <!-- TAB 3: NGHỊCH LÝ B3 & BẪY B4 -->
-    <section id="tab-paradox" class="tab-content hidden">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <div class="text-xs text-slate-500 pt-4 border-t border-slate-800 flex justify-between">
+          <span>Quy tắc loại bỏ: Phân khúc <code>quoc_te</code> retry 3 lần thành công tụt xuống 2,2%</span>
+          <span class="text-emerald-400 font-mono">Điểm hòa vốn cố định: &ge; 4.656 việc/tháng</span>
+        </div>
+      </section>
 
-        <!-- B3: System Optimization Paradox -->
-        <div class="glass-card p-6 flex flex-col justify-between">
-          <div>
-            <div class="flex items-center justify-between mb-4">
-              <h2 class="text-xl font-bold text-white flex items-center gap-2">
-                <span class="p-2 rounded-lg bg-purple-500/20 text-purple-400">⚡</span>
-                Nghịch Lý B3: Chi Phí Trợ Lý vs. Cả Hệ Thống
-              </h2>
-              <span class="text-xs bg-purple-500/20 text-purple-300 px-2.5 py-1 rounded border border-purple-500/30">Hàm Mục Tiêu</span>
+      <!-- SLIDE 4: SYSTEM OPTIMIZATION PARADOX (B3) -->
+      <section id="slide-4" class="slide w-full flex-col justify-between py-2 max-w-5xl">
+        <div>
+          <div class="flex justify-between items-baseline mb-6 border-b border-slate-800 pb-3">
+            <div>
+              <div class="text-xs font-mono text-purple-400 uppercase tracking-wider">NHIỆM VỤ B3 · TỐI ƯU TOÀN CÔNG TY</div>
+              <h2 class="text-2xl md:text-3xl font-bold text-white mt-1">Nghịch Lý Giới Hạn Retry: Trợ Lý vs. Cả Hệ Thống</h2>
             </div>
-            <p class="text-sm text-slate-300 mb-4">
-              Một lỗi tư duy kinh điển: <em>"Cứ giảm số lần chạy retry của agent thì chi phí sẽ rẻ nhất"</em>. Sự thật hoàn toàn ngược lại khi tính <strong>tổng chi phí công ty</strong>:
-            </p>
+            <div class="text-right font-mono text-xs text-slate-400">
+              So sánh hàm mục tiêu cục bộ vs toàn cục
+            </div>
+          </div>
 
-            <div class="overflow-x-auto mb-6">
+          <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-stretch">
+            
+            <!-- Table Card -->
+            <div class="md:col-span-7 panel overflow-hidden">
               <table class="w-full text-xs text-left">
-                <thead class="bg-slate-800/80 text-slate-300 uppercase">
+                <thead class="bg-slate-900/90 text-slate-400 font-mono uppercase text-[11px] border-b border-slate-800">
                   <tr>
-                    <th class="p-2.5 rounded-l">Giới hạn</th>
-                    <th class="p-2.5">Tổng Trợ Lý</th>
-                    <th class="p-2.5">Không TC (giao người)</th>
-                    <th class="p-2.5 text-right">Chi Phí Cả Hệ Thống</th>
-                    <th class="p-2.5 text-right rounded-r">CPS Trợ Lý</th>
+                    <th class="p-3">Giới hạn</th>
+                    <th class="p-3 text-right">Chi phí trợ lý</th>
+                    <th class="p-3 text-right">Không TC (giao người)</th>
+                    <th class="p-3 text-right">Chi phí cả HT</th>
+                    <th class="p-3 text-right">CPS trợ lý</th>
                   </tr>
                 </thead>
                 <tbody class="divide-y divide-slate-800 font-mono">
-                  <tr class="hover:bg-slate-800/40">
-                    <td class="p-2.5 font-bold text-white">1 lần</td>
-                    <td class="p-2.5">3.621.781 đ</td>
-                    <td class="p-2.5 text-red-400 font-bold">319 ca</td>
-                    <td class="p-2.5 text-right text-red-400">7.449.781 đ</td>
-                    <td class="p-2.5 text-right text-emerald-400 font-bold">4.111 đ (thấp nhất)</td>
+                  <tr class="hover:bg-slate-800/30">
+                    <td class="p-3 font-bold text-slate-300">1 lần chạy</td>
+                    <td class="p-3 text-right text-slate-400">3.621.781 đ</td>
+                    <td class="p-3 text-right text-red-400 font-bold">319 ca</td>
+                    <td class="p-3 text-right text-red-400 font-bold">7.449.781 đ</td>
+                    <td class="p-3 text-right text-emerald-400 font-bold">4.111 đ (thấp nhất)</td>
                   </tr>
-                  <tr class="bg-blue-950/40 border border-blue-500/40">
-                    <td class="p-2.5 font-bold text-cyan-300">2 lần ⭐</td>
-                    <td class="p-2.5">4.093.220 đ</td>
-                    <td class="p-2.5 text-emerald-400 font-bold">234 ca (-85 ca)</td>
-                    <td class="p-2.5 text-right text-cyan-300 font-extrabold text-sm">6.901.220 đ (RẺ NHẤT!)</td>
-                    <td class="p-2.5 text-right text-slate-300">4.237 đ</td>
+                  <tr class="bg-blue-950/30 border border-blue-500/40">
+                    <td class="p-3 font-bold text-blue-300">2 lần chạy ⭐</td>
+                    <td class="p-3 text-right text-slate-300">4.093.220 đ</td>
+                    <td class="p-3 text-right text-emerald-400 font-bold">234 ca (-85 ca)</td>
+                    <td class="p-3 text-right text-cyan-300 font-bold text-sm">6.901.220 đ (RẺ NHẤT)</td>
+                    <td class="p-3 text-right text-slate-300">4.237 đ</td>
                   </tr>
-                  <tr class="hover:bg-slate-800/40">
-                    <td class="p-2.5 font-bold text-white">3 lần</td>
-                    <td class="p-2.5">4.373.585 đ</td>
-                    <td class="p-2.5 text-slate-300">222 ca</td>
-                    <td class="p-2.5 text-right text-slate-300">7.037.585 đ</td>
-                    <td class="p-2.5 text-right text-slate-300">4.472 đ</td>
+                  <tr class="hover:bg-slate-800/30">
+                    <td class="p-3 font-bold text-slate-300">3 lần chạy</td>
+                    <td class="p-3 text-right text-slate-400">4.373.585 đ</td>
+                    <td class="p-3 text-right text-slate-400">222 ca</td>
+                    <td class="p-3 text-right text-slate-300">7.037.585 đ</td>
+                    <td class="p-3 text-right text-slate-400">4.472 đ</td>
                   </tr>
                 </tbody>
               </table>
             </div>
 
-            <div class="p-4 rounded-xl bg-slate-900 border border-slate-700/60 space-y-2 text-xs">
-              <div class="text-white font-bold">🔍 Phân tích cơ chế kinh tế:</div>
-              <p class="text-slate-300">
-                • Khi chạy 1 lần: Trợ lý tốn ít hơn mỗi việc (4.111 đ), nhưng có tới <strong>319 yêu cầu hỏng</strong> chuyển sang người gánh. Công ty phải bù <code>319 ca × 12.000 đ = 3.828.000 đ</code>.
-              </p>
-              <p class="text-slate-300">
-                • Khi cho chạy 2 lần: Trợ lý cứu thêm được <strong>85 ca thành công</strong>. Dù tốn thêm tiền token, phần tiền nhân viên giảm tới <code>85 × 12.000 đ = 1.020.000 đ</code>, giúp toàn công ty <strong>tiết kiệm ròng 548.561 đ</strong>!
-              </p>
-            </div>
-          </div>
+            <!-- Explanation Panel -->
+            <div class="md:col-span-5 panel-accent p-5 flex flex-col justify-between">
+              <div>
+                <div class="text-xs font-mono text-cyan-300 uppercase tracking-wider mb-2">Bản chất kinh tế</div>
+                <h3 class="text-base font-bold text-white mb-2">Vì sao 1 lần chạy rẻ cho agent mà đắt cho công ty?</h3>
+                <p class="text-xs text-slate-300 leading-relaxed space-y-2">
+                  Khi chỉ cho chạy 1 lần, trợ lý đạt CPS thấp nhất (4.111 đ), nhưng bỏ cuộc sớm và đẩy <strong>319 ca hỏng</strong> sang nhân viên thủ công gánh với đơn giá 12.000 đ/ca (tốn thêm 3,82 triệu đ).
+                </p>
+                <p class="text-xs text-slate-300 leading-relaxed mt-3">
+                  Khi cho chạy 2 lần: trợ lý cứu được thêm <strong>85 yêu cầu</strong>. Phần tiền nhân viên giảm 1.020.000 đ vượt xa chi phí token bỏ thêm, giúp <strong>toàn công ty tiết kiệm 548.561 đ</strong>!
+                </p>
+              </div>
 
-          <div class="mt-4 p-3 rounded-lg bg-purple-950/40 border border-purple-800/40 text-xs text-purple-200">
-            📌 <strong>Quy tắc chốt:</strong> Cài đặt cấu hình hệ thống cố định <code>max_retries = 2</code>.
+              <div class="mt-4 p-2.5 rounded bg-blue-900/40 border border-blue-700/50 font-mono text-[11px] text-blue-200">
+                👉 Khóa tham số kiến trúc: <code>max_retries = 2</code>
+              </div>
+            </div>
+
           </div>
         </div>
 
-        <!-- B4: 100% Review Trap -->
-        <div class="glass-card p-6 flex flex-col justify-between">
-          <div>
-            <div class="flex items-center justify-between mb-4">
-              <h2 class="text-xl font-bold text-white flex items-center gap-2">
-                <span class="p-2 rounded-lg bg-red-500/20 text-red-400">⚠️</span>
-                Bẫy B4: "Xem Lại 100%" Biến AI Thành Cục Nợ
-              </h2>
-              <span class="text-xs bg-red-500/20 text-red-300 px-2.5 py-1 rounded border border-red-500/30">Cảnh Báo Vận Hành</span>
-            </div>
-            <p class="text-sm text-slate-300 mb-4">
-              Nhiều nhà quản lý lo sợ rủi ro nên đòi hỏi: <em>"Bắt buộc nhân viên xem lại 100% kết quả của AI trước khi gửi khách"</em>. Điều gì sẽ xảy ra?
-            </p>
+        <div class="text-xs text-slate-500 pt-4 border-t border-slate-800 flex justify-between font-mono">
+          <span>Công thức: Chi phí cả HT = Chi phí trợ lý + (Số ca không TC × 12.000 đ)</span>
+          <span class="text-cyan-300">Tối ưu toàn cục: 6.901.220 đ [simulated]</span>
+        </div>
+      </section>
 
-            <!-- Scenario comparison cards -->
-            <div class="space-y-4 mb-6">
-              <div class="p-4 rounded-xl bg-slate-800/60 border border-slate-700">
-                <div class="flex justify-between items-center mb-1">
-                  <span class="text-sm font-bold text-slate-200">Kịch bản 1: Rework 9,0 phút/ca</span>
-                  <span class="text-xs font-mono text-emerald-400 font-bold">11.743 đ / việc (0,98×)</span>
+      <!-- SLIDE 5: THE 100% REVIEW TRAP (B4) -->
+      <section id="slide-5" class="slide w-full flex-col justify-between py-2 max-w-5xl">
+        <div>
+          <div class="flex justify-between items-baseline mb-6 border-b border-slate-800 pb-3">
+            <div>
+              <div class="text-xs font-mono text-red-400 uppercase tracking-wider">NHIỆM VỤ B4 · BẪY VẬN HÀNH</div>
+              <h2 class="text-2xl md:text-3xl font-bold text-white mt-1">Cảnh Báo: "Xem Lại 100%" Biến AI Thành Lỗ</h2>
+            </div>
+            <div class="text-right font-mono text-xs text-slate-400">
+              Phạm vi noi_dia + hang_nang (900 việc TC)
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch mb-6">
+            
+            <!-- Safe case: 9m rework -->
+            <div class="panel p-5 border-slate-800">
+              <div class="text-xs font-mono text-slate-400 mb-1">Kịch bản Rework lý tưởng (9,0 phút/ca)</div>
+              <div class="text-3xl font-mono font-bold text-slate-200">11.743 đ</div>
+              <div class="text-xs text-emerald-400 font-mono mt-1">0,98× Baseline (Tiết kiệm chỉ 2%)</div>
+
+              <p class="text-xs text-slate-400 mt-4 leading-relaxed">
+                Kể cả khi nhân viên sửa lỗi nhanh bất thường (9 phút), chi phí hoàn thành vẫn gần sát mức 12.000 đ của nhân viên tự làm từ đầu. Không có ý nghĩa kinh tế cho doanh nghiệp.
+              </p>
+            </div>
+
+            <!-- Danger case: 15.3m rework -->
+            <div class="panel p-5 border-red-500/60 bg-red-950/20">
+              <div class="text-xs font-mono text-red-400 mb-1">Kịch bản Rework thực tế (15,3 phút/ca)</div>
+              <div class="text-3xl font-mono font-bold text-red-400">12.415 đ</div>
+              <div class="text-xs text-red-300 font-mono mt-1">1,03× Baseline (ĐẮT HƠN NGƯỜI LÀM!)</div>
+
+              <div class="mt-4 space-y-1.5 text-xs font-mono text-slate-300 border-t border-red-900/50 pt-3">
+                <div class="flex justify-between"><span>Token & Tool:</span> <span>224.513 đ</span></div>
+                <div class="flex justify-between"><span>Xem lại 100%:</span> <span class="text-amber-300">9.480.000 đ</span></div>
+                <div class="flex justify-between"><span>Làm lại (48 ca × 15,3m × 2k):</span> <span class="text-red-300">1.468.800 đ</span></div>
+                <div class="flex justify-between border-t border-slate-700 pt-1 font-bold text-white">
+                  <span>Tổng chia 900 việc TC:</span> <span>12.414,79 đ ≈ 12.415 đ</span>
                 </div>
-                <p class="text-xs text-slate-400">Tiết kiệm vỏn vẹn 257 đ (2%) so với nhân viên tự làm (12.000 đ). Không bõ chi phí đầu tư AI.</p>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="p-4 rounded-xl panel bg-slate-900 text-xs text-slate-300 space-y-1">
+            <div class="text-amber-400 font-semibold font-mono">RÀNG BUỘC PHẢI THỎA MÃN TẠI GATE 2A:</div>
+            <div>• Tuyệt đối không áp dụng chính sách xem lại 100% trong quá trình thử nghiệm.</div>
+            <div>• Giữ tỷ lệ xem lại chọn lọc ở mức $\le 20\%$ và kích hoạt lộ trình giảm dần (50% &rarr; 20% &rarr; 10%) khi tỷ lệ nhân viên sửa/bỏ gợi ý giảm xuống dưới 15%.</div>
+          </div>
+        </div>
+
+        <div class="text-xs text-slate-500 pt-4 border-t border-slate-800 flex justify-between font-mono">
+          <span>Chi phí xem lại 100% chiếm 84,8% tổng ngân sách</span>
+          <span class="text-red-400">Ngưỡng nguy hiểm: Rework > 12 phút</span>
+        </div>
+      </section>
+
+      <!-- SLIDE 6: GOOGLE PAIR FAILURE TAXONOMY (C) -->
+      <section id="slide-6" class="slide w-full flex-col justify-between py-2 max-w-5xl">
+        <div>
+          <div class="flex justify-between items-baseline mb-6 border-b border-slate-800 pb-3">
+            <div>
+              <div class="text-xs font-mono text-amber-400 uppercase tracking-wider">NHIỆM VỤ C · GOOGLE PAIR TAXONOMY</div>
+              <h2 class="text-2xl md:text-3xl font-bold text-white mt-1">Phân Loại 20 Ca Lỗi & Biện Pháp Khắc Phục Đo Được</h2>
+            </div>
+            <div class="text-right font-mono text-xs text-emerald-400">
+              Đồng thuận nhãn độc lập: 20/20 (100%)
+            </div>
+          </div>
+
+          <!-- 5 Groups Stats -->
+          <div class="grid grid-cols-5 gap-2 text-center text-xs font-mono mb-4">
+            <div class="panel p-3">
+              <div class="text-slate-400 text-[10px]">Do người dùng</div>
+              <div class="text-lg font-bold text-white">4 ca</div>
+              <div class="text-[10px] text-slate-500">1, 6, 9, 14</div>
+            </div>
+            <div class="panel p-3">
+              <div class="text-slate-400 text-[10px]">Hệ thống</div>
+              <div class="text-lg font-bold text-blue-400">5 ca</div>
+              <div class="text-[10px] text-slate-500">2, 7, 8, 15, 20</div>
+            </div>
+            <div class="panel p-3">
+              <div class="text-slate-400 text-[10px]">Ngữ cảnh</div>
+              <div class="text-lg font-bold text-amber-400">4 ca</div>
+              <div class="text-[10px] text-slate-500">3, 10, 16, 18</div>
+            </div>
+            <div class="panel p-3">
+              <div class="text-slate-400 text-[10px]">Giới hạn HT</div>
+              <div class="text-lg font-bold text-purple-400">4 ca</div>
+              <div class="text-[10px] text-slate-500">4, 11, 13, 19</div>
+            </div>
+            <div class="panel p-3">
+              <div class="text-slate-400 text-[10px]">Lỗi ngầm (Latent)</div>
+              <div class="text-lg font-bold text-red-400">3 ca</div>
+              <div class="text-[10px] text-slate-500">5, 12, 17</div>
+            </div>
+          </div>
+
+          <!-- 5 Sample Mitigations Table -->
+          <div class="panel overflow-hidden">
+            <table class="w-full text-xs text-left">
+              <thead class="bg-slate-900/90 text-slate-400 font-mono uppercase text-[11px] border-b border-slate-800">
+                <tr>
+                  <th class="p-2.5">Ca</th>
+                  <th class="p-2.5">Loại</th>
+                  <th class="p-2.5">Phát hiện bằng gì (Event & Ngưỡng)</th>
+                  <th class="p-2.5">Hành động khắc phục</th>
+                  <th class="p-2.5">Chịu trách nhiệm</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-slate-800 font-mono text-[11px]">
+                <tr>
+                  <td class="p-2.5 font-bold">Ca 9</td>
+                  <td class="p-2.5 text-slate-400">Người dùng</td>
+                  <td class="p-2.5 text-cyan-300"><code>input_validation_failed</code>; cảnh báo khi > 2% YC/ngày</td>
+                  <td class="p-2.5 text-slate-300 font-sans">Tự tra mã sàn TMĐT sang mã LogiX; nếu không được thì hiện ảnh mẫu</td>
+                  <td class="p-2.5 text-slate-200">PM trợ lý hoàn phí</td>
+                </tr>
+                <tr>
+                  <td class="p-2.5 font-bold text-blue-400">Ca 7</td>
+                  <td class="p-2.5 text-blue-300">Hệ thống</td>
+                  <td class="p-2.5 text-cyan-300">Đối soát mỗi giờ: tin "đã hoàn" thiếu bản ghi sổ cái; ngưỡng = 0</td>
+                  <td class="p-2.5 text-slate-300 font-sans">Giao thức 2 pha: chỉ báo khách khi sổ cái trả <code>ok</code></td>
+                  <td class="p-2.5 text-blue-300">Kỹ sư trưởng agent</td>
+                </tr>
+                <tr>
+                  <td class="p-2.5 font-bold text-amber-400">Ca 18</td>
+                  <td class="p-2.5 text-amber-300">Ngữ cảnh</td>
+                  <td class="p-2.5 text-cyan-300">Theo dõi tuần: tỷ lệ <code>ticket_reopened</code> đúng chính sách > 1%</td>
+                  <td class="p-2.5 text-slate-300 font-sans">Minh bạch công thức tính: Phí ship (30k) × Tỷ lệ (50%) = 15k</td>
+                  <td class="p-2.5 text-amber-300">Trưởng nhóm CSKH</td>
+                </tr>
+                <tr>
+                  <td class="p-2.5 font-bold text-purple-400">Ca 4</td>
+                  <td class="p-2.5 text-purple-300">Giới hạn</td>
+                  <td class="p-2.5 text-cyan-300"><code>handoff_to_staff</code> thuộc tính <code>reason=thieu_du_lieu</code> > 5%</td>
+                  <td class="p-2.5 text-slate-300 font-sans">Bàn giao tự động kèm tóm tắt; loại bỏ đơn quốc tế khỏi pilot</td>
+                  <td class="p-2.5 text-purple-300">PM trợ lý hoàn phí</td>
+                </tr>
+                <tr>
+                  <td class="p-2.5 font-bold text-red-400">Ca 17</td>
+                  <td class="p-2.5 text-red-300">Ngầm</td>
+                  <td class="p-2.5 text-cyan-300">Kiểm toán mẫu 100 đơn/tuần so với bảng giá ERP; ngưỡng lệch &ge; 1%</td>
+                  <td class="p-2.5 text-slate-300 font-sans">Webhook xóa cache ngay khi đổi giá; ghim policy version vào trace</td>
+                  <td class="p-2.5 text-red-300">Kế toán trưởng</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="text-xs text-slate-500 pt-4 border-t border-slate-800 flex justify-between font-mono">
+          <span>Quy tắc vàng: Gắn nhãn theo nguyên nhân gốc, không theo nơi sửa</span>
+          <span>100% giải pháp phân định 1 vai trò duy nhất</span>
+        </div>
+      </section>
+
+      <!-- SLIDE 7: CLUSTER RCT & STATISTICAL TRADEOFF (D1-D2) -->
+      <section id="slide-7" class="slide w-full flex-col justify-between py-2 max-w-5xl">
+        <div>
+          <div class="flex justify-between items-baseline mb-6 border-b border-slate-800 pb-3">
+            <div>
+              <div class="text-xs font-mono text-cyan-400 uppercase tracking-wider">NHIỆM VỤ D1 & D2 · KẾ HOẠCH PILOT</div>
+              <h2 class="text-2xl md:text-3xl font-bold text-white mt-1">Thiết Kế Phân Cụm & Đánh Đổi Thống Kê</h2>
+            </div>
+            <div class="text-right font-mono text-xs text-slate-400">
+              Cluster-RCT theo Nhân Viên CSKH (c = 20)
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch mb-6">
+            
+            <!-- Left: Math Bottleneck -->
+            <div class="panel p-5 border-slate-800 flex flex-col justify-between">
+              <div>
+                <div class="text-xs font-mono text-red-400 uppercase mb-2">1. Rào cản cỡ mẫu hiệu dụng (D1)</div>
+                <div class="p-3 rounded bg-red-950/20 border border-red-900/40 text-xs font-mono text-red-300 mb-3">
+                  c = 20 nhân viên · ICC = 0,02 <br/>
+                  Trần n_eff = c / ICC = 20 / 0,02 = 1.000 <br/>
+                  Yêu cầu 5 điểm (+5%): n = 1.251 > 1.000 (KHÔNG ĐẠT)
+                </div>
+                <p class="text-xs text-slate-300 leading-relaxed">
+                  Vì số lượng nhân viên thực tế chỉ có 40 người (20 đối chứng vs 20 can thiệp), hiệu ứng tương quan nội cụm (Design Effect) làm cỡ mẫu hiệu dụng bị chặn cứng ở mức 1.000. Không thể phát hiện mức chênh 5 điểm với Power 80%!
+                </p>
               </div>
 
-              <div class="p-4 rounded-xl bg-red-950/40 border-2 border-red-500/60 shadow-lg">
-                <div class="flex justify-between items-center mb-1">
-                  <span class="text-sm font-bold text-red-300">Kịch bản 2: Rework 15,3 phút/ca (Thực tế)</span>
-                  <span class="text-xs font-mono text-red-400 font-extrabold text-sm">12.414,79 đ ≈ 12.415 đ (1,03×)</span>
-                </div>
-                <div class="text-xs text-red-200 mt-2 space-y-1">
-                  <div>• Token + Tool: 224.513 đ</div>
-                  <div>• Xem lại 100%: 9.480.000 đ</div>
-                  <div>• Làm lại 48 ca × 15,3m × 2.000 đ: 1.468.800 đ</div>
-                  <div class="pt-1 border-t border-red-800 font-bold text-red-300">
-                    👉 TỔNG = 11.173.313 đ / 900 việc = 12.415 đ > 12.000 đ! AI ĐẮT HƠN NGƯỜI LÀM!
+              <div class="p-3 rounded bg-blue-950/40 border border-blue-800/40 text-xs text-blue-200 mt-4">
+                <strong>Đánh đổi kỹ thuật:</strong> Nâng MDE lên <strong>6 điểm</strong> ($n = 859$, $m \ge 299$, $DE = 6,96$). Nếu hiệu ứng thật là 5 điểm, <strong>Power chấp nhận là 64,2%</strong>.
+              </div>
+            </div>
+
+            <!-- Right: Stop Rules & Rollback -->
+            <div class="panel p-5 border-slate-800 flex flex-col justify-between">
+              <div>
+                <div class="text-xs font-mono text-cyan-300 uppercase mb-2">2. Ba luật dừng tự động (Chuẩn 4 vế)</div>
+                <div class="space-y-2 text-[11px] text-slate-300">
+                  <div class="p-2 rounded bg-slate-900 border border-slate-800">
+                    <strong class="text-red-400">An toàn:</strong> NẾU mở lại 7 ngày cao hơn đối chứng $\ge 2$ điểm hoặc $> 6\%$, hoặc $\ge 1$ ca hoàn trùng TRONG 3 ngày THÌ tắt trợ lý trong 30 phút KHÔNG THÌ không được sang bước rollout tiếp theo.
+                  </div>
+                  <div class="p-2 rounded bg-slate-900 border border-slate-800">
+                    <strong class="text-amber-400">Tài chính:</strong> NẾU CPS $> 8.000\text{ đ [sim]}$ TRONG 2 tuần THÌ thu hẹp về duy nhất <code>noi_dia</code> KHÔNG THÌ không được mở rộng sang <code>hang_nang</code>.
+                  </div>
+                  <div class="p-2 rounded bg-slate-900 border border-slate-800">
+                    <strong class="text-blue-400">Chấp nhận:</strong> NẾU tỉ lệ bỏ qua $> 40\%$ TRONG 1 tuần THÌ phỏng vấn 5 nhân viên trong 3 ngày KHÔNG THÌ không được chuyển bước rollout tiếp.
                   </div>
                 </div>
               </div>
+
+              <div class="flex justify-between items-center text-xs font-mono pt-3 border-t border-slate-800 text-slate-400 mt-2">
+                <span>Rollout: 10% &rarr; 25% &rarr; 50%</span>
+                <span class="text-cyan-400">Rollback: 30 phút</span>
+                <span>Chốt: 2027-01-05</span>
+              </div>
             </div>
 
-            <div class="p-4 rounded-xl bg-slate-900 border border-slate-700/60 text-xs text-slate-300">
-              💡 <strong>Bài học xương máu:</strong> Xem lại 100% triệt tiêu hoàn toàn giá trị kinh tế của AI. Pilot bắt buộc phải áp dụng xem lại chọn lọc (selective review $\le 20\%$) và theo dõi chặt chẽ thời gian làm lại thực tế.
+          </div>
+        </div>
+
+        <div class="text-xs text-slate-500 pt-4 border-t border-slate-800 flex justify-between font-mono">
+          <span>Khống chế rò rỉ (Spillover): Phân quyền theo staff_id trên hệ thống ticket</span>
+          <span class="text-slate-400">Interim looks: Chỉ kiểm tra an toàn</span>
+        </div>
+      </section>
+
+      <!-- SLIDE 8: INTERACTIVE ECONOMICS SIMULATOR -->
+      <section id="slide-8" class="slide w-full flex-col justify-between py-2 max-w-5xl">
+        <div>
+          <div class="flex justify-between items-baseline mb-4 border-b border-slate-800 pb-3">
+            <div>
+              <div class="text-xs font-mono text-cyan-400 uppercase tracking-wider">DEMO TƯƠNG TÁC TRỰC TIẾP</div>
+              <h2 class="text-2xl md:text-3xl font-bold text-white mt-1">Bộ Mô Phỏng Độ Nhạy Chi Phí Real-Time</h2>
             </div>
+            <button onclick="resetSliders()" class="px-3 py-1 rounded bg-slate-800 hover:bg-slate-700 text-xs font-mono text-slate-300 border border-slate-700 transition">
+              ↺ Reset (Kịch bản A2)
+            </button>
           </div>
 
-          <div class="mt-4 p-3 rounded-lg bg-red-950/40 border border-red-800/40 text-xs text-red-200">
-            📌 <strong>Điều kiện bắt buộc tại Gate 2a:</strong> Tuyệt đối không duy trì xem lại 100% trong pilot.
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- TAB 4: PHÂN LOẠI LỖI PAIR (C) -->
-    <section id="tab-pair" class="tab-content hidden">
-      <div class="glass-card p-6">
-        <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-6">
-          <div>
-            <h2 class="text-xl font-bold text-white flex items-center gap-2">
-              <span class="p-2 rounded-lg bg-amber-500/20 text-amber-400">🏷️</span>
-              Gắn Nhãn 20 Ca Lỗi Theo Khung Google PAIR
-            </h2>
-            <p class="text-sm text-slate-300">Nguyên tắc cốt lõi: <em>Gắn nhãn theo nguyên nhân gốc, không theo nơi sửa lỗi!</em></p>
-          </div>
-          <div class="flex items-center gap-2">
-            <span class="metric-badge bg-emerald-500/20 text-emerald-300 border border-emerald-500/40">Đồng thuận: 20/20 (100%)</span>
-            <span class="text-xs text-slate-400">Tân (Nhãn 1) · Quân (Nhãn 2)</span>
-          </div>
-        </div>
-
-        <!-- 5 GROUPS BREAKDOWN -->
-        <div class="grid grid-cols-2 sm:grid-cols-5 gap-3 mb-6 text-center text-xs">
-          <div class="p-3 rounded-xl bg-slate-800/70 border border-slate-700">
-            <div class="text-slate-400 mb-1">Do người dùng</div>
-            <div class="text-xl font-bold text-white">4 ca</div>
-            <div class="text-[11px] text-slate-400 mt-1">1, 6, 9, 14</div>
-          </div>
-          <div class="p-3 rounded-xl bg-slate-800/70 border border-slate-700">
-            <div class="text-slate-400 mb-1">Hệ thống</div>
-            <div class="text-xl font-bold text-blue-400">5 ca</div>
-            <div class="text-[11px] text-slate-400 mt-1">2, 7, 8, 15, 20</div>
-          </div>
-          <div class="p-3 rounded-xl bg-slate-800/70 border border-slate-700">
-            <div class="text-slate-400 mb-1">Ngữ cảnh</div>
-            <div class="text-xl font-bold text-amber-400">4 ca</div>
-            <div class="text-[11px] text-slate-400 mt-1">3, 10, 16, 18</div>
-          </div>
-          <div class="p-3 rounded-xl bg-slate-800/70 border border-slate-700">
-            <div class="text-slate-400 mb-1">Giới hạn HT</div>
-            <div class="text-xl font-bold text-purple-400">4 ca</div>
-            <div class="text-[11px] text-slate-400 mt-1">4, 11, 13, 19</div>
-          </div>
-          <div class="p-3 rounded-xl bg-slate-800/70 border border-slate-700">
-            <div class="text-slate-400 mb-1">Lỗi ngầm (Latent)</div>
-            <div class="text-xl font-bold text-red-400">3 ca</div>
-            <div class="text-[11px] text-slate-400 mt-1">5, 12, 17</div>
-          </div>
-        </div>
-
-        <!-- SAMPLE 5 CASES MITIGATION TABLE -->
-        <h3 class="text-sm font-bold text-slate-200 mb-3 flex items-center gap-2">
-          <span>🛠️</span> 5 Ca Khắc Phục Mẫu (Đại diện 5 loại lỗi kèm ngưỡng định lượng & 1 vai trò duy nhất)
-        </h3>
-        <div class="overflow-x-auto">
-          <table class="w-full text-xs text-left">
-            <thead class="bg-slate-800 text-slate-300 uppercase">
-              <tr>
-                <th class="p-2.5 rounded-l">Ca</th>
-                <th class="p-2.5">Loại Lỗi</th>
-                <th class="p-2.5">Phát Hiện Bằng Gì (Event & Ngưỡng)</th>
-                <th class="p-2.5">Biện Pháp Khắc Phục</th>
-                <th class="p-2.5 rounded-r">Ai Phụ Trách</th>
-              </tr>
-            </thead>
-            <tbody class="divide-y divide-slate-800">
-              <tr class="hover:bg-slate-800/30">
-                <td class="p-2.5 font-bold font-mono">Ca 9</td>
-                <td class="p-2.5"><span class="px-2 py-0.5 rounded bg-slate-700 text-slate-300">Do người dùng</span></td>
-                <td class="p-2.5 font-mono text-cyan-300">Event <code>input_validation_failed</code>; cảnh báo khi > 2% tổng YC/ngày</td>
-                <td class="p-2.5 text-slate-300">Nhận diện mẫu mã sàn TMĐT (Shopee/TikTok), tự tra sang mã LogiX; nếu không được thì hiện ảnh hướng dẫn</td>
-                <td class="p-2.5 font-semibold text-white">PM trợ lý hoàn phí</td>
-              </tr>
-              <tr class="hover:bg-slate-800/30">
-                <td class="p-2.5 font-bold font-mono">Ca 7</td>
-                <td class="p-2.5"><span class="px-2 py-0.5 rounded bg-blue-900/60 text-blue-300">Hệ thống</span></td>
-                <td class="p-2.5 font-mono text-cyan-300">Đối soát mỗi giờ: tin "đã hoàn" nhưng thiếu bản ghi sổ cái; ngưỡng = 0 ca</td>
-                <td class="p-2.5 text-slate-300">Giao thức 2 pha (2-phase commit): chỉ báo khách khi sổ cái trả <code>ok</code>; lỗi 503 retry 3 lần rồi chuyển người</td>
-                <td class="p-2.5 font-semibold text-blue-300">Kỹ sư trưởng agent</td>
-              </tr>
-              <tr class="hover:bg-slate-800/30">
-                <td class="p-2.5 font-bold font-mono">Ca 18</td>
-                <td class="p-2.5"><span class="px-2 py-0.5 rounded bg-amber-900/60 text-amber-300">Ngữ cảnh</span></td>
-                <td class="p-2.5 font-mono text-cyan-300">Báo cáo tuần: tỷ lệ <code>ticket_reopened</code> lý do "hoàn thiếu" mà đối soát thấy đúng chính sách; ngưỡng > 1%</td>
-                <td class="p-2.5 text-slate-300">Minh bạch công thức tính trong tin nhắn: Phí ship (30k) × Tỷ lệ chính sách (50%) = Hoàn thực tế (15k)</td>
-                <td class="p-2.5 font-semibold text-amber-300">Trưởng nhóm CSKH</td>
-              </tr>
-              <tr class="hover:bg-slate-800/30">
-                <td class="p-2.5 font-bold font-mono">Ca 4</td>
-                <td class="p-2.5"><span class="px-2 py-0.5 rounded bg-purple-900/60 text-purple-300">Giới hạn HT</span></td>
-                <td class="p-2.5 font-mono text-cyan-300">Event <code>handoff_to_staff</code> thuộc tính <code>reason=thieu_du_lieu</code>; ngưỡng cảnh báo > 5%</td>
-                <td class="p-2.5 text-slate-300">Bàn giao tự động kèm tóm tắt; đồng thời cắt bỏ phân khúc quốc tế ra khỏi phạm vi thử nghiệm</td>
-                <td class="p-2.5 font-semibold text-purple-300">PM trợ lý hoàn phí</td>
-              </tr>
-              <tr class="hover:bg-slate-800/30">
-                <td class="p-2.5 font-bold font-mono">Ca 17</td>
-                <td class="p-2.5"><span class="px-2 py-0.5 rounded bg-red-900/60 text-red-300">Lỗi ngầm</span></td>
-                <td class="p-2.5 font-mono text-cyan-300">Kiểm toán mẫu ngẫu nhiên 100 đơn/tuần so với bảng giá ERP; ngưỡng phát hiện sai lệch $\ge 1\%$</td>
-                <td class="p-2.5 text-slate-300">Webhook xóa cache ngay khi có bảng giá mới trên ERP; ghim chặt <code>pricing_policy_version</code> vào trace</td>
-                <td class="p-2.5 font-semibold text-red-300">Kế toán trưởng</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </section>
-
-    <!-- TAB 5: KẾ HOẠCH PILOT (D-E) -->
-    <section id="tab-pilot" class="tab-content hidden">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
-
-        <!-- Left: D1 Cluster Sizing & Statistical Power -->
-        <div class="lg:col-span-6 glass-card p-6">
-          <div class="flex items-center justify-between mb-4">
-            <h2 class="text-lg font-bold text-white flex items-center gap-2">
-              <span>🔬</span> D1 · Bài Toán Phân Cụm & Đánh Đổi Thống Kê
-            </h2>
-            <span class="text-xs bg-slate-800 text-slate-300 px-2 py-1 rounded">Cluster-RCT</span>
-          </div>
-
-          <div class="space-y-3 text-xs text-slate-300">
-            <p>
-              • <strong>Đơn vị phân cụm:</strong> Chia theo nhân viên CSKH (20 người đối chứng vs. 20 người can thiệp) để tránh rò rỉ tri thức (contamination).
-            </p>
-            <p>
-              • <strong>Hệ số tương quan nội cụm:</strong> $\text{ICC} = 0,02$.
-            </p>
+          <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
             
-            <div class="p-3 rounded-xl bg-red-950/30 border border-red-800/40 text-red-200">
-              ❌ <strong>Rào cản toán học:</strong> Với $c = 20\text{ nhân viên}$, trần cỡ mẫu hiệu dụng tối đa là:
-              <div class="font-mono text-center my-1 text-sm font-bold text-red-300">
-                n_eff = c / ICC = 20 / 0,02 = 1.000 < 1.251
+            <!-- Controls -->
+            <div class="md:col-span-6 space-y-4">
+              <div>
+                <div class="flex justify-between text-xs font-mono mb-1">
+                  <span class="text-slate-300">Tỉ lệ xem lại (Review Rate)</span>
+                  <span id="txt-review" class="text-cyan-400 font-bold">1,0× (1.780.000 đ)</span>
+                </div>
+                <input type="range" id="sl-review" min="0" max="2" step="0.1" value="1.0" class="w-full" oninput="calculateSimulator()"/>
+                <div class="flex justify-between text-[10px] text-slate-500 font-mono">
+                  <span>0× (Không xem lại)</span>
+                  <span>1× (Gốc)</span>
+                  <span>2× (+40,7%)</span>
+                </div>
               </div>
-              Do đó, <strong>không thể phát hiện mức chênh 5 điểm</strong> với Statistical Power 80%!
+
+              <div>
+                <div class="flex justify-between text-xs font-mono mb-1">
+                  <span class="text-slate-300">Số ca làm lại (Rework Cases)</span>
+                  <span id="txt-rework" class="text-amber-400 font-bold">1,0× (2.264.000 đ)</span>
+                </div>
+                <input type="range" id="sl-rework" min="0" max="2" step="0.1" value="1.0" class="w-full" oninput="calculateSimulator()"/>
+                <div class="flex justify-between text-[10px] text-slate-500 font-mono">
+                  <span>0× (Agent hoàn hảo)</span>
+                  <span>1× (Gốc)</span>
+                  <span>2× (+51,8%)</span>
+                </div>
+              </div>
+
+              <div>
+                <div class="flex justify-between text-xs font-mono mb-1">
+                  <span class="text-slate-300">Giá Token API</span>
+                  <span id="txt-token" class="text-blue-400 font-bold">1,0× (245.585 đ)</span>
+                </div>
+                <input type="range" id="sl-token" min="0.5" max="2" step="0.1" value="1.0" class="w-full" oninput="calculateSimulator()"/>
+                <div class="flex justify-between text-[10px] text-slate-500 font-mono">
+                  <span>0.5× (-2,8%)</span>
+                  <span>1× (Gốc)</span>
+                  <span>2× (+5,6%)</span>
+                </div>
+              </div>
+
+              <div>
+                <span class="text-xs font-mono text-slate-300 block mb-1.5">Giới hạn Retry</span>
+                <div class="grid grid-cols-3 gap-2 text-xs font-mono">
+                  <button type="button" onclick="setRetries(1)" id="btn-retry-1" class="retry-btn p-2 rounded bg-slate-800 border border-slate-700 text-slate-400 font-semibold">1 Lần</button>
+                  <button type="button" onclick="setRetries(2)" id="btn-retry-2" class="retry-btn active p-2 rounded bg-blue-600 border border-blue-400 text-white font-bold">2 Lần ⭐</button>
+                  <button type="button" onclick="setRetries(3)" id="btn-retry-3" class="retry-btn p-2 rounded bg-slate-800 border border-slate-700 text-slate-400 font-semibold">3 Lần</button>
+                </div>
+              </div>
             </div>
 
-            <div class="p-3 rounded-xl bg-blue-950/40 border border-blue-800/40 text-blue-200">
-              ✔️ <strong>Giải pháp đánh đổi kỹ thuật của nhóm 4TL:</strong>
-              <div class="mt-1 space-y-1">
-                <div>• Nâng mức tác động phát hiện tối thiểu (MDE) lên <strong>6 điểm</strong> ($n = 859$/nhóm).</div>
-                <div>• Giải phương trình phân cụm: cần $m \ge 299\text{ YC/nhân viên}$ ($DE = 6,96$).</div>
-                <div>• Tổng mẫu: $n = 5.980\text{ YC/nhóm}$ (khả thi trong 3–4 tuần).</div>
-                <div>• Đánh đổi minh bạch: Nếu hiệu ứng thật là 5 điểm, <strong>Power chỉ còn 64,2%</strong>.</div>
+            <!-- Display -->
+            <div class="md:col-span-6 panel-accent p-6 flex flex-col justify-between">
+              <div>
+                <div class="text-[11px] font-mono text-slate-400 uppercase tracking-wider mb-1">Cost of Pass (CPS)</div>
+                <div class="flex items-baseline gap-2 mb-2">
+                  <span id="out-cps" class="text-4xl font-mono font-bold text-white">4.472 đ</span>
+                  <span class="text-xs text-slate-400 font-mono">/ việc TC</span>
+                </div>
+
+                <div id="out-compare" class="mb-4">
+                  <span class="px-2 py-0.5 rounded bg-emerald-950 text-emerald-400 border border-emerald-800/60 font-mono text-xs font-semibold">0,37× baseline (Tiết kiệm 63%)</span>
+                </div>
+
+                <div class="space-y-2 pt-3 border-t border-slate-800 text-xs font-mono">
+                  <div class="flex justify-between text-slate-400">
+                    <span>Tổng trợ lý:</span>
+                    <span id="out-agent-cost" class="text-slate-200">4.373.585 đ</span>
+                  </div>
+                  <div class="flex justify-between text-slate-400">
+                    <span>Phần người làm bù:</span>
+                    <span id="out-staff-burden" class="text-amber-300">2.808.000 đ</span>
+                  </div>
+                  <div class="flex justify-between text-slate-200 font-bold border-t border-slate-800/80 pt-1.5 text-sm">
+                    <span class="text-cyan-300">CHI PHÍ CẢ HỆ THỐNG:</span>
+                    <span id="out-system-cost" class="text-cyan-300">6.901.220 đ</span>
+                  </div>
+                  <div class="flex justify-between text-slate-500 text-[11px]">
+                    <span>Giờ nhân viên chiếm:</span>
+                    <span id="out-staff-share">92,5%</span>
+                  </div>
+                </div>
+              </div>
+
+              <div id="out-alert" class="mt-4 p-2.5 rounded bg-emerald-950/40 border border-emerald-800/40 text-xs text-emerald-300 font-mono">
+                Kịch bản an toàn: Chi phí AI rẻ hơn người tự làm.
               </div>
             </div>
+
           </div>
         </div>
 
-        <!-- Right: 3 Stop Rules & 10 Events -->
-        <div class="lg:col-span-6 space-y-6">
-          <div class="glass-card p-6">
-            <h2 class="text-lg font-bold text-white mb-3 flex items-center gap-2">
-              <span>🛑</span> 3 Luật Dừng Tự Động (Chuẩn 4 vế)
-            </h2>
-            <div class="space-y-2.5 text-xs">
-              <div class="p-2.5 rounded-lg bg-red-950/40 border border-red-800/50">
-                <span class="text-red-400 font-bold">1. Luật an toàn dịch vụ:</span>
-                <p class="text-slate-300 mt-1">
-                  <strong>NẾU</strong> mở lại 7 ngày cao hơn đối chứng $\ge 2$ điểm hoặc $> 6\%$, hoặc có $\ge 1$ ca hoàn trùng <strong>TRONG</strong> 3 ngày <strong>THÌ</strong> Giám đốc vận hành tắt trợ lý trong 30 phút <strong>KHÔNG THÌ</strong> không được sang bước rollout tiếp theo.
-                </p>
-              </div>
-              <div class="p-2.5 rounded-lg bg-amber-950/40 border border-amber-800/50">
-                <span class="text-amber-400 font-bold">2. Luật an toàn tài chính:</span>
-                <p class="text-slate-300 mt-1">
-                  <strong>NẾU</strong> CPS $> 8.000\text{ đ [sim]}$ <strong>TRONG</strong> 2 tuần <strong>THÌ</strong> PM thu hẹp về duy nhất <code>noi_dia</code> và giới hạn tối đa 2 lần chạy <strong>KHÔNG THÌ</strong> không được mở rộng sang <code>hang_nang</code>.
-                </p>
-              </div>
-              <div class="p-2.5 rounded-lg bg-blue-950/40 border border-blue-800/50">
-                <span class="text-blue-400 font-bold">3. Luật chấp nhận người dùng:</span>
-                <p class="text-slate-300 mt-1">
-                  <strong>NẾU</strong> tỉ lệ bỏ qua gợi ý $> 40\%$ <strong>TRONG</strong> 1 tuần <strong>THÌ</strong> Trưởng nhóm CSKH phỏng vấn 5 nhân viên trong 3 ngày <strong>KHÔNG THÌ</strong> không được chuyển bước rollout tiếp theo.
-                </p>
-              </div>
+        <div class="text-xs text-slate-500 pt-4 border-t border-slate-800 flex justify-between font-mono">
+          <span>Công thức: CPS = (Token + Tool + Review + Rework) / Việc TC</span>
+          <span>Baseline: 12.000 đ</span>
+        </div>
+      </section>
+
+      <!-- SLIDE 9: FINAL VERDICT & BINDING CONDITIONS -->
+      <section id="slide-9" class="slide w-full flex-col justify-between py-2 max-w-5xl">
+        <div>
+          <div class="flex justify-between items-baseline mb-6 border-b border-slate-800 pb-3">
+            <div>
+              <div class="text-xs font-mono text-emerald-400 uppercase tracking-wider">HỒ SƠ GATE 2A · PHÁN QUYẾT CHÍNH THỨC</div>
+              <h2 class="text-3xl md:text-4xl font-extrabold text-white mt-1">
+                ĐỀ XUẤT: <span class="text-emerald-400">GO CÓ ĐIỀU KIỆN</span>
+              </h2>
+            </div>
+            <div class="text-right font-mono text-xs text-slate-400">
+              Phạm vi: noi_dia + hang_nang
             </div>
           </div>
 
-          <div class="glass-card p-4">
-            <div class="flex justify-between items-center text-xs">
-              <span class="text-slate-300 font-semibold">Rollout: 10% → 25% → 50%</span>
-              <span class="text-cyan-400 font-mono">Rollback khẩn cấp: 30 phút</span>
-              <span class="text-emerald-400 font-mono">Chốt ngày: 2027-01-05</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- TAB 6: BỘ MÔ PHỎNG REAL-TIME -->
-    <section id="tab-simulator" class="tab-content hidden">
-      <div class="glass-card p-6">
-        <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-6">
-          <div>
-            <h2 class="text-xl font-bold text-white flex items-center gap-2">
-              <span class="p-2 rounded-lg bg-cyan-500/20 text-cyan-400">🎛️</span>
-              Bộ Mô Phỏng Chi Phí Real-Time Cho Hội Đồng
-            </h2>
-            <p class="text-sm text-slate-300">Kéo các thanh trượt bên dưới để kiểm tra tính nhạy của chi phí ngay trước mắt ban giám khảo!</p>
-          </div>
-          <button onclick="resetSliders()" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-xs text-slate-300 border border-slate-600 transition">
-            ↺ Đặt Lại Mặc Định (A2)
-          </button>
-        </div>
-
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-          
-          <!-- Sliders Controls -->
-          <div class="lg:col-span-6 space-y-5">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch mb-6">
             
-            <!-- Slider 1: Review Multiplier -->
-            <div>
-              <div class="flex justify-between text-xs mb-1">
-                <span class="text-slate-300 font-semibold">Tỉ lệ xem lại (Review Rate)</span>
-                <span id="txt-review" class="font-mono text-cyan-300 font-bold">1,0× (1.780.000 đ)</span>
-              </div>
-              <input type="range" id="sl-review" min="0" max="2" step="0.1" value="1.0" class="w-full accent-cyan-400" oninput="calculateSimulator()"/>
-              <div class="flex justify-between text-[10px] text-slate-500">
-                <span>0× (Bỏ xem lại)</span>
-                <span>1× (Hiện tại)</span>
-                <span>2× (Gấp đôi: +40,7%)</span>
-              </div>
+            <!-- 4 Facts -->
+            <div class="panel p-5 border-red-900/40 bg-red-950/10">
+              <div class="text-xs font-mono text-red-400 uppercase tracking-wider mb-3">4 Điểm Bất Lợi Được Thừa Nhận Thẳng Thắn</div>
+              <ul class="space-y-2.5 text-xs text-slate-300">
+                <li class="flex items-start gap-2">
+                  <span class="text-red-400 font-mono font-bold">1.</span>
+                  <span><strong>Đơn quốc tế lỗ 1,88×</strong> (22.515 đ), retry 3 lần tỉ lệ đúng giảm còn 2,2%.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-red-400 font-mono font-bold">2.</span>
+                  <span><strong>Xem lại 100% gây lỗ</strong> (12.415 đ [sim] > 12.000 đ người tự làm).</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-red-400 font-mono font-bold">3.</span>
+                  <span><strong>Trần mẫu n_eff = 1.000</strong>, buộc nâng MDE 6 điểm, Power đạt 64,2% (ở mức 5 điểm).</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-red-400 font-mono font-bold">4.</span>
+                  <span><strong>Rủi ro tiền bạc</strong> từ lỗi hoàn trùng (ca 20) và lỗi trôi sổ cái (ca 7).</span>
+                </li>
+              </ul>
             </div>
 
-            <!-- Slider 2: Rework Multiplier -->
-            <div>
-              <div class="flex justify-between text-xs mb-1">
-                <span class="text-slate-300 font-semibold">Số ca làm lại (Rework Cases)</span>
-                <span id="txt-rework" class="font-mono text-amber-300 font-bold">1,0× (2.264.000 đ)</span>
-              </div>
-              <input type="range" id="sl-rework" min="0" max="2" step="0.1" value="1.0" class="w-full accent-amber-400" oninput="calculateSimulator()"/>
-              <div class="flex justify-between text-[10px] text-slate-500">
-                <span>0× (AI đúng 100%)</span>
-                <span>1× (Hiện tại)</span>
-                <span>2× (Gấp đôi: +51,8%)</span>
-              </div>
+            <!-- 4 Conditions -->
+            <div class="panel p-5 border-emerald-900/40 bg-emerald-950/10">
+              <div class="text-xs font-mono text-emerald-400 uppercase tracking-wider mb-3">4 Ràng Buộc Bắt Buộc Trước Khi Rollout</div>
+              <ul class="space-y-2.5 text-xs text-slate-300">
+                <li class="flex items-start gap-2">
+                  <span class="text-emerald-400 font-mono font-bold">1.</span>
+                  <span><strong>Khoanh vùng:</strong> Chỉ cấp phép <code>noi_dia</code> & <code>hang_nang</code>. Cắt bỏ 100% quốc tế & đối tác. <em>(PM · 25/11)</em></span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-emerald-400 font-mono font-bold">2.</span>
+                  <span><strong>Kỹ thuật:</strong> Hoàn tất Idempotency Key & giao thức 2 pha sổ cái (ca 7 & 20). <em>(Lead Eng · 28/11)</em></span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-emerald-400 font-mono font-bold">3.</span>
+                  <span><strong>Phê duyệt:</strong> COO ký chấp thuận đánh đổi MDE 6 điểm và Power 64,2%. <em>(COO · 30/11)</em></span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-emerald-400 font-mono font-bold">4.</span>
+                  <span><strong>Vận hành:</strong> Lộ trình giảm xem lại &le; 20%, kích hoạt 3 luật dừng & rollback 30m. <em>(CS Lead · 15/12)</em></span>
+                </li>
+              </ul>
             </div>
 
-            <!-- Slider 3: Token Multiplier -->
-            <div>
-              <div class="flex justify-between text-xs mb-1">
-                <span class="text-slate-300 font-semibold">Giá Token LLM</span>
-                <span id="txt-token" class="font-mono text-blue-300 font-bold">1,0× (245.585 đ)</span>
-              </div>
-              <input type="range" id="sl-token" min="0.5" max="2" step="0.1" value="1.0" class="w-full accent-blue-400" oninput="calculateSimulator()"/>
-              <div class="flex justify-between text-[10px] text-slate-500">
-                <span>0.5× (-2,8%)</span>
-                <span>1× (Hiện tại)</span>
-                <span>2× (+5,6%)</span>
-              </div>
-            </div>
-
-            <!-- Selector 4: Retry Limit -->
-            <div>
-              <label class="text-xs text-slate-300 font-semibold block mb-2">Giới Hạn Chạy Retry</label>
-              <div class="grid grid-cols-3 gap-2 text-xs">
-                <button type="button" onclick="setRetries(1)" id="btn-retry-1" class="retry-btn p-2 rounded-lg bg-slate-800 border border-slate-700 text-slate-300 font-semibold">
-                  1 Lần Chạy
-                </button>
-                <button type="button" onclick="setRetries(2)" id="btn-retry-2" class="retry-btn active p-2 rounded-lg bg-blue-600 border border-blue-400 text-white font-bold">
-                  2 Lần Chạy ⭐
-                </button>
-                <button type="button" onclick="setRetries(3)" id="btn-retry-3" class="retry-btn p-2 rounded-lg bg-slate-800 border border-slate-700 text-slate-300 font-semibold">
-                  3 Lần Chạy
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <!-- Live Output Display Card -->
-          <div class="lg:col-span-6 p-6 rounded-2xl bg-gradient-to-tr from-slate-900 to-blue-950 border-2 border-blue-500/40 shadow-2xl">
-            <div class="text-xs text-cyan-300 uppercase tracking-widest font-bold mb-1">KẾT QUẢ MÔ PHỎNG REAL-TIME</div>
-            
-            <div class="flex items-baseline gap-2 mb-2">
-              <span id="out-cps" class="text-4xl font-extrabold text-white font-mono">4.472 đ</span>
-              <span class="text-xs text-slate-300 font-normal">/ việc thành công</span>
-            </div>
-
-            <div id="out-compare" class="mb-6">
-              <span class="metric-badge bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">
-                0,37× người làm (Tiết kiệm 63%)
-              </span>
-            </div>
-
-            <div class="space-y-3 pt-4 border-t border-slate-800 text-xs">
-              <div class="flex justify-between text-slate-300">
-                <span>Tổng chi phí trợ lý:</span>
-                <span id="out-agent-cost" class="font-mono text-white font-bold">4.373.585 đ</span>
-              </div>
-              <div class="flex justify-between text-slate-300">
-                <span>Chi phí nhân viên gánh phần hỏng:</span>
-                <span id="out-staff-burden" class="font-mono text-amber-300 font-bold">2.808.000 đ</span>
-              </div>
-              <div class="flex justify-between text-sm font-extrabold text-cyan-300 pt-2 border-t border-slate-700">
-                <span>CHI PHÍ CẢ HỆ THỐNG:</span>
-                <span id="out-system-cost" class="font-mono text-cyan-300">6.901.220 đ</span>
-              </div>
-              <div class="flex justify-between text-slate-400 text-[11px]">
-                <span>Tỉ trọng giờ nhân viên:</span>
-                <span id="out-staff-share" class="font-mono text-slate-300">92,5%</span>
-              </div>
-            </div>
-
-            <div id="out-alert" class="mt-4 p-3 rounded-xl bg-emerald-950/40 border border-emerald-800/40 text-xs text-emerald-200">
-              ✔️ Kịch bản an toàn, hiệu quả kinh tế cao hơn nhân viên tự làm.
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- TAB 7: QUYẾT ĐỊNH GATE 2A -->
-    <section id="tab-decision" class="tab-content hidden">
-      <div class="glass-card p-6 border-blue-500/30">
-        
-        <!-- Big Decision Header -->
-        <div class="text-center max-w-3xl mx-auto mb-8">
-          <span class="metric-badge bg-blue-500/20 text-blue-300 border border-blue-500/40 text-sm px-4 py-1 mb-2">
-            HỘI ĐỒNG GATE 2A · PHÁN QUYẾT CUỐI CÙNG
-          </span>
-          <h2 class="text-3xl md:text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-cyan-300 to-blue-400 mt-2">
-            GO CÓ ĐIỀU KIỆN (CONDITIONAL GO)
-          </h2>
-          <p class="text-sm text-slate-300 mt-2">
-            Hồ sơ thẳng thắn thừa nhận 4 điểm bất lợi cốt lõi từ thực tế và chỉ cấp phép thử nghiệm pilot khi tuân thủ nghiêm ngặt 4 điều kiện ràng buộc.
-          </p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-
-          <!-- 4 Unfavorable Facts -->
-          <div class="p-6 rounded-2xl bg-slate-900/90 border border-red-500/30">
-            <h3 class="text-base font-bold text-red-400 mb-4 flex items-center gap-2">
-              <svg class="w-5 h-5 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
-              4 Điểm Bất Lợi Được Thừa Nhận Thẳng Thắn
-            </h3>
-            <ul class="space-y-3 text-xs text-slate-300">
-              <li class="flex items-start gap-2">
-                <span class="text-red-400 font-bold">•</span>
-                <span><strong>Đơn quốc tế gây lỗ nặng:</strong> CPS lên tới 22.515 đ (gấp 1,88× so với người làm) và retry 3 lần không cải thiện tỷ lệ đúng (rơi từ 30% xuống 2,2%).</span>
-              </li>
-              <li class="flex items-start gap-2">
-                <span class="text-red-400 font-bold">•</span>
-                <span><strong>Bẫy xem lại 100%:</strong> Nếu duy trì xem lại tất cả, chi phí đội lên 12.415 đ [sim] (1,03× baseline 12.000 đ), làm AI đắt hơn nhân viên tự làm.</span>
-              </li>
-              <li class="flex items-start gap-2">
-                <span class="text-red-400 font-bold">•</span>
-                <span><strong>Cỡ mẫu bị giới hạn:</strong> 20 nhân viên/nhóm gặp trần $n_{\text{eff}} = 1.000$, buộc phải đánh đổi nâng MDE lên 6 điểm và chấp nhận Power chỉ đạt 64,2% (nếu hiệu ứng là 5 điểm).</span>
-              </li>
-              <li class="flex items-start gap-2">
-                <span class="text-red-400 font-bold">•</span>
-                <span><strong>Rủi ro tài chính tiềm ẩn:</strong> Nguy cơ hoàn tiền trùng (Ca 20) và lỗi trôi trạng thái sổ cái (Ca 7) có thể làm thất thoát ngân sách công ty.</span>
-              </li>
-            </ul>
-          </div>
-
-          <!-- 4 Binding Conditions -->
-          <div class="p-6 rounded-2xl bg-slate-900/90 border border-emerald-500/30">
-            <h3 class="text-base font-bold text-emerald-400 mb-4 flex items-center gap-2">
-              <svg class="w-5 h-5 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-              4 Điều Kiện Ràng Buộc Bắt Buộc Khởi Chạy
-            </h3>
-            <ul class="space-y-3 text-xs text-slate-300">
-              <li class="flex items-start gap-2">
-                <span class="text-emerald-400 font-bold">1.</span>
-                <span><strong>Khoanh vùng phạm vi:</strong> Chỉ cấp phép chạy pilot cho <code>noi_dia</code> (0,22×) và <code>hang_nang</code> (0,69×). 100% đơn quốc tế và đối tác chuyển thẳng cho nhân viên. <em>(PM trợ lý hoàn phí · 2026-11-25)</em></span>
-              </li>
-              <li class="flex items-start gap-2">
-                <span class="text-emerald-400 font-bold">2.</span>
-                <span><strong>Khắc phục lỗi trọng yếu:</strong> Hoàn tất cài đặt Idempotency Key và đối soát 2 pha với sổ cái (giải quyết dứt điểm ca 7 và ca 20) trước khi mở cổng pilot. <em>(Kỹ sư trưởng agent · 2026-11-28)</em></span>
-              </li>
-              <li class="flex items-start gap-2">
-                <span class="text-emerald-400 font-bold">3.</span>
-                <span><strong>Phê duyệt đánh đổi thống kê:</strong> Giám đốc vận hành ký văn bản chấp thuận MDE 6 điểm và mức Statistical Power 64,2%. <em>(Giám đốc vận hành · 2026-11-30)</em></span>
-              </li>
-              <li class="flex items-start gap-2">
-                <span class="text-emerald-400 font-bold">4.</span>
-                <span><strong>Kiểm soát xem lại:</strong> Lộ trình giảm tỷ lệ xem lại theo bậc (50% → 20% → 10%), tuyệt đối không duy trì 100%. Duy trì 3 luật dừng tự động và rollback 30 phút. <em>(Trưởng nhóm CSKH · 2026-12-15)</em></span>
-              </li>
-            </ul>
           </div>
         </div>
 
-        <div class="mt-8 text-center text-xs text-slate-400">
-          Hồ sơ đã được nghiệm thu và số hoá đầy đủ tại kho lưu trữ nhóm 4TL: 
-          <a href="https://github.com/trongjhuongwr/K5-L3A-DAY13-4TL-LaunchEconomics" target="_blank" class="text-blue-400 underline font-mono">
-            github.com/trongjhuongwr/K5-L3A-DAY13-4TL-LaunchEconomics
-          </a>
+        <div class="text-xs text-slate-500 pt-4 border-t border-slate-800 flex justify-between font-mono">
+          <span>Hồ sơ thẩm định hoàn tất bởi Nhóm 4TL</span>
+          <span class="text-blue-400">Repo: trongjhuongwr/K5-L3A-DAY13-4TL-LaunchEconomics</span>
         </div>
-      </div>
-    </section>
+      </section>
 
-  </main>
+    </div>
+  </div>
 
-  <!-- JAVASCRIPT FOR TABS & INTERACTIVE SIMULATOR -->
+  <!-- BOTTOM CONTROL BAR -->
+  <footer class="h-14 border-t border-slate-800/80 px-6 flex items-center justify-between text-xs text-slate-400 bg-[#090d16] select-none z-20">
+    <div class="flex items-center gap-2">
+      <button onclick="prevSlide()" class="px-3 py-1.5 rounded bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 transition flex items-center gap-1">
+        <span>&larr;</span> Trước
+      </button>
+      <button onclick="nextSlide()" class="px-3 py-1.5 rounded bg-blue-600 hover:bg-blue-500 text-white font-semibold transition flex items-center gap-1">
+        Sau <span>&rarr;</span>
+      </button>
+    </div>
+
+    <!-- Center Shortcuts Guide -->
+    <div class="hidden sm:flex items-center gap-4 text-[11px] text-slate-500 font-mono">
+      <span><kbd class="px-1.5 py-0.5 rounded bg-slate-800 border border-slate-700 text-slate-300">&larr;</kbd> <kbd class="px-1.5 py-0.5 rounded bg-slate-800 border border-slate-700 text-slate-300">&rarr;</kbd> Chuyển slide</span>
+      <span><kbd class="px-1.5 py-0.5 rounded bg-slate-800 border border-slate-700 text-slate-300">Space</kbd> Slide tiếp</span>
+      <span><kbd class="px-1.5 py-0.5 rounded bg-slate-800 border border-slate-700 text-slate-300">F</kbd> Toàn màn hình</span>
+    </div>
+
+    <!-- Quick Jump Selector -->
+    <div class="flex items-center gap-2">
+      <select id="slide-jump" onchange="goToSlide(parseInt(this.value))" class="bg-slate-800 border border-slate-700 text-slate-300 text-xs rounded px-2 py-1 font-mono focus:outline-none focus:border-blue-500">
+        <option value="1">01 · Bìa Hồ Sơ</option>
+        <option value="2">02 · Tảng Băng Chi Phí (A2)</option>
+        <option value="3">03 · Phân Khúc Kinh Tế (A3-A4)</option>
+        <option value="4">04 · Nghịch Lý Retry B3</option>
+        <option value="5">05 · Bẫy Xem Lại 100% (B4)</option>
+        <option value="6">06 · Phân Loại Lỗi PAIR (C)</option>
+        <option value="7">07 · Kế Hoạch Pilot (D1-D2)</option>
+        <option value="8">08 · Simulator Tương Tác</option>
+        <option value="9">09 · Phán Quyết Gate 2a</option>
+      </select>
+    </div>
+  </footer>
+
+  <!-- DECK LOGIC & SIMULATOR SCRIPTS -->
   <script>
-    // Tab switching logic
-    function switchTab(tabId) {
-      document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
-      document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
-      
-      const targetTab = document.getElementById(tabId);
-      if (targetTab) {
-        targetTab.classList.remove('hidden');
+    const totalSlides = 9;
+    let currentSlide = 1;
+
+    const sectionTitles = {
+      1: "TỔNG QUAN HỒ SƠ",
+      2: "A2 · CHI PHÍ THỰC TẾ (COST OF PASS)",
+      3: "A3 & A4 · PHÂN RÃ PHẠM VI KINH TẾ",
+      4: "B3 · TỐI ƯU TOÀN CÔNG TY",
+      5: "B4 · BẪY VẬN HÀNH XEM LẠI 100%",
+      6: "C · GOOGLE PAIR FAILURE TAXONOMY",
+      7: "D · KẾ HOẠCH PILOT & ĐÁNH ĐỔI THỐNG KÊ",
+      8: "BỘ MÔ PHỎNG CHI PHÍ TƯƠNG TÁC",
+      9: "PHÁN QUYẾT GATE 2A: CONDITIONAL GO"
+    };
+
+    function updateSlide() {
+      // Hide all slides
+      for (let i = 1; i <= totalSlides; i++) {
+        const el = document.getElementById(`slide-${i}`);
+        if (el) {
+          el.classList.remove('active');
+        }
       }
-      
-      const activeBtn = document.getElementById('btn-' + tabId);
-      if (activeBtn) {
-        activeBtn.classList.add('active');
+
+      // Show current slide
+      const currentEl = document.getElementById(`slide-${currentSlide}`);
+      if (currentEl) {
+        currentEl.classList.add('active');
+      }
+
+      // Update counters & labels
+      document.getElementById('slide-num-current').textContent = String(currentSlide).padStart(2, '0');
+      document.getElementById('slide-num-total').textContent = String(totalSlides).padStart(2, '0');
+      document.getElementById('nav-section-title').textContent = sectionTitles[currentSlide] || "";
+      document.getElementById('slide-jump').value = currentSlide;
+
+      // Update progress bar
+      const pct = (currentSlide / totalSlides) * 100;
+      document.getElementById('progress-bar').style.width = pct + "%";
+    }
+
+    function nextSlide() {
+      if (currentSlide < totalSlides) {
+        currentSlide++;
+        updateSlide();
       }
     }
 
-    // Simulator State
+    function prevSlide() {
+      if (currentSlide > 1) {
+        currentSlide--;
+        updateSlide();
+      }
+    }
+
+    function goToSlide(n) {
+      if (n >= 1 && n <= totalSlides) {
+        currentSlide = n;
+        updateSlide();
+      }
+    }
+
+    // Keyboard controls
+    window.addEventListener('keydown', (e) => {
+      if (e.target.tagName === 'INPUT' || e.target.tagName === 'SELECT') return;
+
+      if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'PageDown') {
+        e.preventDefault();
+        nextSlide();
+      } else if (e.key === 'ArrowLeft' || e.key === 'PageUp' || e.key === 'Backspace') {
+        e.preventDefault();
+        prevSlide();
+      } else if (e.key === 'Home') {
+        e.preventDefault();
+        goToSlide(1);
+      } else if (e.key === 'End') {
+        e.preventDefault();
+        goToSlide(totalSlides);
+      } else if (e.key === 'f' || e.key === 'F') {
+        if (!document.fullscreenElement) {
+          document.documentElement.requestFullscreen().catch(() => {});
+        } else {
+          document.exitFullscreen().catch(() => {});
+        }
+      }
+    });
+
+    // SIMULATOR LOGIC
     let selectedRetries = 2;
 
     function setRetries(n) {
       selectedRetries = n;
       document.querySelectorAll('.retry-btn').forEach(b => {
         b.classList.remove('active', 'bg-blue-600', 'border-blue-400', 'text-white', 'font-bold');
-        b.classList.add('bg-slate-800', 'border-slate-700', 'text-slate-300');
+        b.classList.add('bg-slate-800', 'border-slate-700', 'text-slate-400');
       });
       const btn = document.getElementById('btn-retry-' + n);
       if (btn) {
         btn.classList.add('active', 'bg-blue-600', 'border-blue-400', 'text-white', 'font-bold');
-        btn.classList.remove('bg-slate-800', 'border-slate-700', 'text-slate-300');
+        btn.classList.remove('bg-slate-800', 'border-slate-700', 'text-slate-400');
       }
       calculateSimulator();
     }
@@ -971,7 +973,6 @@
       const reworkMult = parseFloat(document.getElementById('sl-rework').value);
       const tokenMult = parseFloat(document.getElementById('sl-token').value);
 
-      // Base amounts for 3 retries
       let baseToken = 245585;
       let baseTool = 84000;
       let baseReview = 1780000;
@@ -995,7 +996,6 @@
         failedCases = 234;
       }
 
-      // Updated costs
       const curToken = baseToken * tokenMult;
       const curTool = baseTool;
       const curReview = baseReview * reviewMult;
@@ -1007,50 +1007,34 @@
       const totalSystemCost = totalAgentCost + staffBurden;
       const staffShare = ((curReview + curRework) / totalAgentCost) * 100;
 
-      // Update Slider Labels
       document.getElementById('txt-review').textContent = `${reviewMult.toFixed(1)}× (${Math.round(curReview).toLocaleString('vi-VN')} đ)`;
       document.getElementById('txt-rework').textContent = `${reworkMult.toFixed(1)}× (${Math.round(curRework).toLocaleString('vi-VN')} đ)`;
       document.getElementById('txt-token').textContent = `${tokenMult.toFixed(1)}× (${Math.round(curToken).toLocaleString('vi-VN')} đ)`;
 
-      // Update Output Display
       document.getElementById('out-cps').textContent = Math.round(curCPS).toLocaleString('vi-VN') + ' đ';
       document.getElementById('out-agent-cost').textContent = Math.round(totalAgentCost).toLocaleString('vi-VN') + ' đ';
       document.getElementById('out-staff-burden').textContent = Math.round(staffBurden).toLocaleString('vi-VN') + ' đ';
       document.getElementById('out-system-cost').textContent = Math.round(totalSystemCost).toLocaleString('vi-VN') + ' đ';
       document.getElementById('out-staff-share').textContent = staffShare.toFixed(1) + '%';
 
-      // Update Compare Badge & Alert
       const ratio = curCPS / 12000;
       const badge = document.getElementById('out-compare');
       const alertBox = document.getElementById('out-alert');
 
       if (ratio < 1.0) {
         const saved = Math.round((1 - ratio) * 100);
-        badge.innerHTML = `<span class="metric-badge bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 font-bold">${ratio.toFixed(2)}× người làm (Tiết kiệm ${saved}%)</span>`;
-        alertBox.className = "mt-4 p-3 rounded-xl bg-emerald-950/40 border border-emerald-800/40 text-xs text-emerald-200";
-        alertBox.innerHTML = `✔️ <strong>Kịch bản có lợi thế kinh tế rõ rệt:</strong> Chi phí AI rẻ hơn nhân viên tự làm (${Math.round(curCPS).toLocaleString('vi-VN')} đ vs 12.000 đ).`;
+        badge.innerHTML = `<span class="px-2 py-0.5 rounded bg-emerald-950 text-emerald-400 border border-emerald-800/60 font-mono text-xs font-semibold">${ratio.toFixed(2)}× baseline (Tiết kiệm ${saved}%)</span>`;
+        alertBox.className = "mt-4 p-2.5 rounded bg-emerald-950/40 border border-emerald-800/40 text-xs text-emerald-300 font-mono";
+        alertBox.innerHTML = `Kịch bản an toàn: Chi phí AI rẻ hơn người tự làm (${Math.round(curCPS).toLocaleString('vi-VN')} đ vs 12.000 đ).`;
       } else {
-        badge.innerHTML = `<span class="metric-badge bg-red-500/20 text-red-300 border border-red-500/30 font-bold">${ratio.toFixed(2)}× người làm (LỖ KINH TẾ!)</span>`;
-        alertBox.className = "mt-4 p-3 rounded-xl bg-red-950/40 border border-red-800/40 text-xs text-red-200";
-        alertBox.innerHTML = `❌ <strong>CẢNH BÁO: AI ĐẮT HƠN NGƯỜI TỰ LÀM!</strong> CPS vượt quá baseline 12.000 đ. Hội đồng sẽ bác bỏ đề xuất nếu kịch bản này xảy ra!`;
+        badge.innerHTML = `<span class="px-2 py-0.5 rounded bg-red-950 text-red-400 border border-red-800/60 font-mono text-xs font-semibold">${ratio.toFixed(2)}× baseline (LỖ KINH TẾ)</span>`;
+        alertBox.className = "mt-4 p-2.5 rounded bg-red-950/40 border border-red-800/40 text-xs text-red-300 font-mono";
+        alertBox.innerHTML = `CẢNH BÁO: AI ĐẮT HƠN NGƯỜI LÀM TAY! CPS vượt baseline 12.000 đ.`;
       }
     }
 
-    // Keyboard navigation (Left / Right arrow keys for slides)
-    const tabs = ['tab-iceberg', 'tab-scope', 'tab-paradox', 'tab-pair', 'tab-pilot', 'tab-simulator', 'tab-decision'];
-    let currentTabIndex = 0;
-
-    window.addEventListener('keydown', (e) => {
-      if (e.key === 'ArrowRight') {
-        currentTabIndex = (currentTabIndex + 1) % tabs.length;
-        switchTab(tabs[currentTabIndex]);
-      } else if (e.key === 'ArrowLeft') {
-        currentTabIndex = (currentTabIndex - 1 + tabs.length) % tabs.length;
-        switchTab(tabs[currentTabIndex]);
-      }
-    });
-
-    // Initial calculation
+    // Init
+    updateSlide();
     calculateSimulator();
   </script>
 </body>
