@@ -198,14 +198,17 @@ if __name__ == '__main__':
     print('\n' + '-' * 70)
     print('NHIỆM VỤ B3 · GIỚI HẠN CHẠY LẠI CẢ HỆ THỐNG')
     print('-' * 70)
-    print(f"{'Giới hạn':<10} | {'Tổng trợ lý [sim]':>18} | {'Không TC':>10} | {'Cả hệ thống':>16} | {'CPS Trợ lý':>12}")
+    print(f"{'Giới hạn':<10} | {'Tổng trợ lý [sim]':>18} | {'Không TC':>10} | {'Cả hệ thống':>28} | {'CPS Trợ lý':>20}")
     print('-' * 70)
     for k in [1, 2, 3]:
         kq_k = mo_hinh(runs, reqs, max_lan_chay=k if k < 3 else None)
         khong_tc = len(reqs) - kq_k['thanh_cong']
         chi_phi_he_thong = kq_k['tong'] + BASELINE * khong_tc
-        ghi_chu = " (thấp nhất)" if k == 1 else (" (RẺ NHẤT)" if k == 2 else "")
-        print(f"{k} lần chạy  | {kq_k['tong']:>16,.0f} đ | {khong_tc:>10d} | {chi_phi_he_thong:>14,.0f} đ{ghi_chu} | {kq_k['cps']:>10,.0f} đ")
+        note_he_thong = " (RẺ NHẤT CẢ HỆ THỐNG)" if k == 2 else ""
+        note_cps = " (thấp nhất)" if k == 1 else ""
+        str_he_thong = f"{chi_phi_he_thong:>14,.0f} đ{note_he_thong}"
+        str_cps = f"{kq_k['cps']:>10,.0f} đ{note_cps}"
+        print(f"{k} lần chạy  | {kq_k['tong']:>16,.0f} đ | {khong_tc:>10d} | {str_he_thong:>28} | {str_cps:>20}")
 
     # 7. Nhiệm vụ B4 · Nếu phải xem lại tất cả (100%)
     print('\n' + '-' * 70)
@@ -230,7 +233,7 @@ if __name__ == '__main__':
     cps_b4_15m = tong_b4_15m / tc_b4
 
     print(f"Xem lại 100% (làm lại 9m):    Tổng = {tong_b4_9m:,.0f} đ | CPS = {cps_b4_9m:,.0f} đ ({cps_b4_9m/BASELINE:.2f}×)")
-    print(f"Xem lại 100% (làm lại 15,3m):  Tổng = {tong_b4_15m:,.0f} đ | CPS = {cps_b4_15m:,.0f} đ ({cps_b4_15m/BASELINE:.2f}×) -> ĐẮT HƠN NGƯỜI TỰ LÀM")
+    print(f"Xem lại 100% (làm lại 15,3m):  Tổng = {tong_b4_15m:,.0f} đ | CPS = {cps_b4_15m:,.2f} đ ({cps_b4_15m:,.0f} đ làm tròn, {cps_b4_15m/BASELINE:.2f}×) -> ĐẮT HƠN NGƯỜI TỰ LÀM")
 
     # 8. Nhiệm vụ D1 · Cỡ mẫu
     print('\n' + '-' * 70)
