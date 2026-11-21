@@ -70,13 +70,13 @@ Số tính bằng `src/lab13.py`. Mọi con số tính từ cột `_simulated` g
 
 | Giới hạn | Tổng chi phí trợ lý | Số yêu cầu không thành công | Chi phí cả hệ thống | Chi phí mỗi việc thành công |
 | --- | ---: | ---: | ---: | ---: |
-| 1 lần | ... | ... | ... | ... |
-| 2 lần | ... | ... | ... | ... |
-| 3 lần | ... | ... | ... | ... |
+| 1 lần | 3.621.781 đ (simulated) | 319 | 7.449.781 đ (simulated) | 4.111 đ (simulated; CPS trợ lý thấp nhất) |
+| 2 lần | 4.093.220 đ (simulated) | 234 | **6.901.220 đ (simulated; tổng hệ thống thấp nhất)** | 4.237 đ (simulated) |
+| 3 lần | 4.373.585 đ (simulated) | 222 | 7.037.585 đ (simulated) | 4.472 đ (simulated) |
 
-- Giới hạn nào rẻ nhất cho công ty? Có trùng với giới hạn cho chi phí mỗi việc thành công thấp nhất không? ...
+- Giới hạn **2 lần** rẻ nhất cho công ty (**6.901.220 đ simulated**); giới hạn **1 lần** có CPS trợ lý thấp nhất (**4.111 đ simulated**). Hai tiêu chí không trùng nhau.
 
 ## B4 · Nếu phải xem lại tất cả
 
-- Chi phí mỗi việc thành công khi xem lại 100% (`noi_dia` + `hang_nang`), so với 12.000 đ: ...
-- Kết quả này nói gì về thứ pilot cần học được? ...
+- Xem lại 100% trong `noi_dia` + `hang_nang`: **11.743 đ simulated (0,98×)** nếu làm lại 9 phút; **12.414,79 đ simulated**, tức **12.415 đ (1,03×)** khi dùng 15,3 phút/ca.
+- Ở 15,3 phút, CPS cao hơn baseline **12.000 đ**; pilot cần đo thời gian thật và xác định mức xem lại an toàn đủ thấp để duy trì hiệu quả kinh tế.
