@@ -242,7 +242,7 @@ Chỉ lấy noi_dia và hang_nang (982 yêu cầu). Các bước:
 3.  Cộng token + tool của mọi lần chạy thuộc 982 yêu cầu: 224.513 đ.
 4.  Chia tổng 10.568.513 đ cho 900 việc thành công → **11.743 đ = 0,98× của 12.000 đ** [simulated].
 
-**Độ nhạy theo phút làm lại.** Đề cho 9 phút/ca, nhưng cột `phut_lam_lai_simulated` trung bình **15,3 phút/ca** trên toàn bộ ca lam_lai (trung vị 14,5). Thay 9 bằng 15,3: 48 × 15,3 × 2.000 = 1.468.800 đ → tổng 11.173.313 đ → **12.414 đ = 1,03×** [simulated], tức xem lại 100% còn đắt hơn nhân viên tự làm. Mức hoà vốn: mỗi lần xem lại phải ≤ 5,1 phút (với 9 phút làm lại) hoặc ≤ 4,8 phút (với 15,3 phút). Ghi cả hai con số khi báo cáo B4.
+**Độ nhạy theo phút làm lại.** Đề cho 9 phút/ca, nhưng cột `phut_lam_lai_simulated` trung bình **15,3 phút/ca** trên toàn bộ ca lam_lai (trung vị 14,5). Thay 9 bằng 15,3: 48 × 15,3 × 2.000 = 1.468.800 đ → tổng 11.173.313 đ → 11.173.313 / 900 = **12.414,79 đ**, hiển thị **12.415 đ = 1,03×** sau khi làm tròn đến đồng gần nhất [simulated]. Xem lại 100% vì vậy đắt hơn nhân viên tự làm. Mức hoà vốn: mỗi lần xem lại phải ≤ 5,1 phút (với 9 phút làm lại) hoặc ≤ 4,8 phút (với 15,3 phút). Ghi cả hai con số khi báo cáo B4.
 
 Ý nghĩa: xem lại 100% thì trợ lý gần như không tiết kiệm được gì, vì tiền xem lại chiếm 90% chi phí. Pilot phải học được tỉ lệ xem lại có thể giảm an toàn xuống mức nào, và mỗi lần xem lại có ngắn hơn 5 phút được không.
 
