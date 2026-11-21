@@ -51,13 +51,13 @@
 
 ## 4. Bằng chứng
 
-- File bảng lỗi Google PAIR: [report/team/bang_loi.md](file:///E:/K5-L3A-DAY13-4TL-LaunchEconomics/report/team/bang_loi.md).
-- File kế hoạch thử nghiệm pilot: [report/team/pilot_plan.yaml](file:///E:/K5-L3A-DAY13-4TL-LaunchEconomics/report/team/pilot_plan.yaml).
+- File bảng lỗi Google PAIR: [bang_loi.md](bang_loi.md).
+- File kế hoạch thử nghiệm pilot: [pilot_plan.yaml](pilot_plan.yaml).
   - Đã kiểm tra cú pháp thành công bằng lệnh:
     `python -c "import yaml; yaml.safe_load(open('report/team/pilot_plan.yaml', encoding='utf-8'))"`
   - Hoàn toàn sạch dấu hỏi (`?`).
-- File đặc tả chỉ số và telemetry: [report/team/chi_so.md](file:///E:/K5-L3A-DAY13-4TL-LaunchEconomics/report/team/chi_so.md).
-- File hồ sơ launch Gate 2a: [report/team/ho_so_launch_v0.md](file:///E:/K5-L3A-DAY13-4TL-LaunchEconomics/report/team/ho_so_launch_v0.md).
+- File đặc tả chỉ số và telemetry: [chi_so.md](chi_so.md).
+- File hồ sơ launch Gate 2a: [ho_so_launch_v0.md](ho_so_launch_v0.md).
 - Rà soát toàn bộ thư mục `report/team/`: Không chứa từ cấm chỉ môi trường vận hành quy mô lớn, mọi số liệu chi phí từ trace giả lập đều được gắn nhãn `[simulated]` đúng quy định.
 
 ## 5. Công cụ AI đã dùng

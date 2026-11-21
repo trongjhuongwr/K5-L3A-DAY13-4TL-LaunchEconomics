@@ -48,9 +48,9 @@
 
 ## 4. Bằng chứng
 
-- File bảng lỗi và khắc phục: [report/team/bang_loi.md](file:///h:/VinAI/K5-L3A-DAY13-4TL-LaunchEconomics/report/team/bang_loi.md).
+- File bảng lỗi và khắc phục: [bang_loi.md](bang_loi.md).
 - Bảng đồng thuận nhãn: Đạt 20/20 ca trùng khớp (100% tỷ lệ đồng thuận).
-- Cập nhật thông tin thành viên và phân vai cá nhân tại [TEAM.md](file:///h:/VinAI/K5-L3A-DAY13-4TL-LaunchEconomics/TEAM.md).
+- Cập nhật thông tin thành viên và phân vai cá nhân tại [TEAM.md](../../TEAM.md).
 - Nhánh git thực hiện: `tan_branch`, các commit được thực hiện bởi tài khoản `minhtantran99` (`minhtantran.contact@gmail.com`).
 
 ## 5. Công cụ AI đã dùng

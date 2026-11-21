@@ -12,13 +12,13 @@ Nhóm: 4TL · Lớp: L3A
 | 4 · Chỉ số chính, chỉ số dùng, chỉ số an toàn | Chỉ số trong đợt chạy thử: Chính (**82,83%** đóng trong 24h & không mở lại 7 ngày) · Dùng (**27,12%** bỏ qua hoặc sửa gợi ý) · An toàn (**4,25%** mở lại trong 7 ngày; trong phạm vi pilot: 3,97%) | Xong, có bằng chứng | Trưởng nhóm CSKH |
 | 5 · Bảng lỗi và cách khắc phục | Phân loại 20 ca lỗi Google PAIR (đồng thuận 100%): 4 Người dùng, 5 Hệ thống, 4 Ngữ cảnh, 4 Giới hạn, 3 Ngầm. Bảng 5 ca mẫu có event định lượng và vai trò xử lý cụ thể | Xong, có bằng chứng | Kỹ sư trưởng agent |
 | 6 · Pilot plan | Thiết kế A/B 20 vs 20 nhân viên phân tầng theo depot; chấp nhận MDE 6 điểm ($n = 859$/nhóm, $m \ge 299$ yc/người); 3 luật dừng chuẩn cú pháp 4 vế, rollback 30 phút, chốt ngày 2027-01-05 | Xong, có bằng chứng | Giám đốc vận hành LogiX-VN |
-| 7 · Rủi ro kinh tế | Làm lại gấp đôi tăng +51,8% (6.787 đ); Duy trì xem lại 100% tốn 11.743 đ – 12.414 đ (0,98× – 1,03×) [simulated], triệt tiêu lợi ích kinh tế; Hụt khối lượng đội chi phí cố định (+1.185 đ đến +2.370 đ/việc) | Giả lập | Kế toán trưởng |
+| 7 · Rủi ro kinh tế | Làm lại gấp đôi tăng +51,8% (6.787 đ); Duy trì xem lại 100% tốn 11.743 đ – 12.415 đ (0,98× – 1,03×) [simulated], triệt tiêu lợi ích kinh tế; Hụt khối lượng đội chi phí cố định (+1.185 đ đến +2.370 đ/việc) | Giả lập | Kế toán trưởng |
 
 **Đề xuất:** **Go có điều kiện** (Conditional Go cho phạm vi thử nghiệm pilot `noi_dia` + `hang_nang`)
 
 Hồ sơ thẳng thắn thừa nhận 4 điểm bất lợi cốt lõi từ dữ liệu thực tế:
 1. Luồng yêu cầu `quoc_te` gây lỗ nặng 1,88× (22.515 đ so với 12.000 đ của nhân viên tự làm) và retry 3 lần không cải thiện tỷ lệ thành công (tụt từ 30% xuống 2,2%).
-2. Kịch bản xem lại 100% tiêu tốn 11.743 đ (0,98×) đến 12.414 đ (1,03× [simulated]), làm biến mất hoàn toàn hiệu quả tiết kiệm chi phí của trợ lý.
+2. Kịch bản xem lại 100% tiêu tốn 11.743 đ (0,98×) đến 12.414,79 đ ≈ 12.415 đ (1,03× [simulated]), làm biến mất hoàn toàn hiệu quả tiết kiệm chi phí của trợ lý.
 3. Cỡ mẫu 20 nhân viên mỗi nhóm không thể phát hiện mức chênh 5 điểm; khi chấp nhận MDE 6 điểm, Statistical Power suy giảm còn 64,2% nếu hiệu quả thật chỉ là 5 điểm.
 4. Nguy cơ rủi ro tài chính cao từ lỗi hoàn tiền trùng 2 lần (ca 20) và lỗi không đồng bộ trạng thái sổ cái (ca 7).
 

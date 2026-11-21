@@ -37,7 +37,7 @@
 
 ## 4. Bằng chứng
 
-- File mã nguồn: [src/lab13.py](file:///h:/VinAI/K5-L3A-DAY13-4TL-LaunchEconomics/src/lab13.py).
+- File mã nguồn: [src/lab13.py](../../src/lab13.py).
 - Kết quả chạy thực tế trên môi trường Python 3.13:
   - Khởi tạo môi trường ảo `.venv` bằng `uv` và cài đặt đầy đủ các gói `requirements.txt`.
   - Lệnh kiểm tra: `python lab13.py` chạy hoàn hảo 100%, in ra toàn bộ bảng A2, A3, B1, B3, B4, D1, E1 không có bất kỳ ngoại lệ nào.

@@ -54,9 +54,9 @@ Ví dụ: `report/team/2A202603607_NguyenTrongHuong.md`.
 
 ### Bằng chứng
 
-- File code: [src/lab13.py](file:///h:/VinAI/K5-L3A-DAY13-4TL-LaunchEconomics/src/lab13.py).
+- File code: [src/lab13.py](src/lab13.py).
 - Output console chạy lệnh `python lab13.py` in đầy đủ bảng số liệu khớp 100% đáp án chuẩn.
-- File báo cáo cá nhân: [report/team/2A202603607_NguyenTrongHuong.md](file:///h:/VinAI/K5-L3A-DAY13-4TL-LaunchEconomics/report/team/2A202603607_NguyenTrongHuong.md).
+- File báo cáo cá nhân: [report/team/2A202603607_NguyenTrongHuong.md](report/team/2A202603607_NguyenTrongHuong.md).
 
 ---
 
@@ -74,8 +74,8 @@ Ví dụ: `report/team/2A202603607_NguyenTrongHuong.md`.
 
 ### Bằng chứng
 
-- Output chạy `src/lab13.py`; cập nhật trong `report/team/bang_chi_phi.md` và `docs/Lab13_Huong_dan_chi_tiet_buoi_chieu.md`.
-- Báo cáo cá nhân: [report/team/2A202603579_LeThanhDat.md](file:///h:/VinAI/K5-L3A-DAY13-4TL-LaunchEconomics/report/team/2A202603579_LeThanhDat.md).
+- Output chạy `src/lab13.py`; cập nhật trong [report/team/bang_chi_phi.md](report/team/bang_chi_phi.md) và `docs/Lab13_Huong_dan_chi_tiet_buoi_chieu.md`.
+- Báo cáo cá nhân: [report/team/2A202603579_LeThanhDat.md](report/team/2A202603579_LeThanhDat.md).
 
 ---
 
@@ -95,9 +95,9 @@ Ví dụ: `report/team/2A202603607_NguyenTrongHuong.md`.
 
 ### Bằng chứng
 
-- File bảng lỗi hoàn chỉnh: [report/team/bang_loi.md](file:///h:/VinAI/K5-L3A-DAY13-4TL-LaunchEconomics/report/team/bang_loi.md).
+- File bảng lỗi hoàn chỉnh: [report/team/bang_loi.md](report/team/bang_loi.md).
 - Kết quả đối soát nhãn: 20/20 ca trùng khớp (tỉ lệ đồng thuận 100%).
-- File báo cáo cá nhân: [report/team/2A202603688_TranMinhTan.md](file:///h:/VinAI/K5-L3A-DAY13-4TL-LaunchEconomics/report/team/2A202603688_TranMinhTan.md).
+- File báo cáo cá nhân: [report/team/2A202603688_TranMinhTan.md](report/team/2A202603688_TranMinhTan.md).
 
 ---
 
@@ -110,15 +110,15 @@ Ví dụ: `report/team/2A202603607_NguyenTrongHuong.md`.
 ### Đóng góp cụ thể
 
 - Gắn nhãn độc lập 20 ca lỗi theo phân loại Google PAIR, đạt tỉ lệ đồng thuận tuyệt đối 100% (20/20 ca) với Người gắn nhãn 1. Soạn thảo quy tắc phân biệt cho 5 ca dễ nhầm lẫn và thiết lập bảng khắc phục 5 ca mẫu với ngưỡng định lượng và vai trò chịu trách nhiệm cụ thể.
-- Hoàn thiện kế hoạch thực nghiệm [report/team/pilot_plan.yaml](file:///h:/VinAI/K5-L3A-DAY13-4TL-LaunchEconomics/report/team/pilot_plan.yaml), giải chi tiết bài toán cỡ mẫu phân cụm D1 và kiểm tra tính tách biệt tác động D2. Thiết lập 3 luật dừng chuẩn cú pháp 4 vế (NẾU - TRONG - THÌ - KHÔNG THÌ), cơ chế rollback 30 phút và loại bỏ 100% dấu `?`.
-- Đặc tả 3 chỉ số hiện trạng E1 (Chính 82,83%, Dùng 27,12%, An toàn 4,25%), đề xuất thêm 2 chỉ số mới, xây dựng danh mục 10 telemetry event chuẩn có `trace_id` kèm ma trận kiểm tra chéo tại [report/team/chi_so.md](file:///h:/VinAI/K5-L3A-DAY13-4TL-LaunchEconomics/report/team/chi_so.md).
+- Hoàn thiện kế hoạch thực nghiệm [report/team/pilot_plan.yaml](report/team/pilot_plan.yaml), giải chi tiết bài toán cỡ mẫu phân cụm D1 và kiểm tra tính tách biệt tác động D2. Thiết lập 3 luật dừng chuẩn cú pháp 4 vế (NẾU - TRONG - THÌ - KHÔNG THÌ), cơ chế rollback 30 phút và loại bỏ 100% dấu `?`.
+- Đặc tả 3 chỉ số hiện trạng E1 (Chính 82,83%, Dùng 27,12%, An toàn 4,25%), đề xuất thêm 2 chỉ số mới, xây dựng danh mục 10 telemetry event chuẩn có `trace_id` kèm ma trận kiểm tra chéo tại [report/team/chi_so.md](report/team/chi_so.md).
 - Phân tích 3 rủi ro kinh tế trọng yếu E2 từ bảng độ nhạy kèm biện pháp ứng phó định lượng.
-- Hoàn thiện Hồ sơ launch v0 [report/team/ho_so_launch_v0.md](file:///h:/VinAI/K5-L3A-DAY13-4TL-LaunchEconomics/report/team/ho_so_launch_v0.md) đúng 1 trang tóm tắt 7 mục, gắn nhãn `[simulated]` minh bạch, đưa ra đề xuất Go có điều kiện kèm 4 điều kiện ràng buộc bảo vệ an toàn tài chính và vận hành.
+- Hoàn thiện Hồ sơ launch v0 [report/team/ho_so_launch_v0.md](report/team/ho_so_launch_v0.md) đúng 1 trang tóm tắt 7 mục, gắn nhãn `[simulated]` minh bạch, đưa ra đề xuất Go có điều kiện kèm 4 điều kiện ràng buộc bảo vệ an toàn tài chính và vận hành.
 
 ### Bằng chứng
 
-- File bảng lỗi: [report/team/bang_loi.md](file:///h:/VinAI/K5-L3A-DAY13-4TL-LaunchEconomics/report/team/bang_loi.md)
-- File kế hoạch pilot: [report/team/pilot_plan.yaml](file:///h:/VinAI/K5-L3A-DAY13-4TL-LaunchEconomics/report/team/pilot_plan.yaml)
-- File chỉ số & telemetry: [report/team/chi_so.md](file:///h:/VinAI/K5-L3A-DAY13-4TL-LaunchEconomics/report/team/chi_so.md)
-- File hồ sơ launch: [report/team/ho_so_launch_v0.md](file:///h:/VinAI/K5-L3A-DAY13-4TL-LaunchEconomics/report/team/ho_so_launch_v0.md)
-- File báo cáo cá nhân: [report/team/2A202603626_PhamNgocTrungQuan.md](file:///h:/VinAI/K5-L3A-DAY13-4TL-LaunchEconomics/report/team/2A202603626_PhamNgocTrungQuan.md)
+- File bảng lỗi: [report/team/bang_loi.md](report/team/bang_loi.md)
+- File kế hoạch pilot: [report/team/pilot_plan.yaml](report/team/pilot_plan.yaml)
+- File chỉ số & telemetry: [report/team/chi_so.md](report/team/chi_so.md)
+- File hồ sơ launch: [report/team/ho_so_launch_v0.md](report/team/ho_so_launch_v0.md)
+- File báo cáo cá nhân: [report/team/2A202603626_PhamNgocTrungQuan.md](report/team/2A202603626_PhamNgocTrungQuan.md)
